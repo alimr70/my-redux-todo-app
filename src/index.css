@@ -1,13 +1,200 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  list-style-type: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  background-color: #171718;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-left {
+  background-color: #242426;
+  min-width: 250px;
+  max-width: 400px;
+  height: 100%;
+}
+
+.container-center {
+  background-color: #1A1B1C;
+  width: 100%;
+  height: 100%;
+  margin: 0 2px;
+}
+
+.container-right {
+  background-color: #1E1E1E;
+  min-width: 360px;
+  height: 100%;
+}
+
+.left,
+.center,
+.right {
+  margin-top: 5rem;
+}
+
+.btn {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #BFBFBF;
+}
+
+.icon {
+  text-align: center;
+  display: inline-block;
+  color: #767678;
+}
+
+.icon::before {
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-calendar::before {
+  content: url("/img/calendar-icon.svg");
+}
+
+.icon-group::before {
+  content: url("/img/group-icon.svg");
+}
+
+.icon-group-plus::before {
+  content: url("/img/group-plus-icon.svg");
+}
+
+.icon-ham::before {
+  content: url("/img/ham-icon.svg");
+}
+
+.icon-person::before {
+  content: url("/img/person-icon.svg");
+}
+
+.icon-plus::before {
+  content: url("/img/plus-icon.svg");
+}
+
+.icon-star::before {
+  content: url("/img/star-icon.svg");
+}
+
+.icon-sun::before {
+  content: url("/img/sun-icon.svg");
+}
+
+.icon-home::before {
+  content: url("/img/home-icon.svg");
+}
+
+.icon-arrow::before {
+  content: url("/img/arrow-icon.svg");
+}
+
+.toolbar-item:hover {
+  background: #BFBFBF;
+}
+
+.toolbar-inner {
+  color: #767678;
+  cursor: pointer;
+  height: 3rem;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.toolbar-title {
+  margin: 0 8px;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toolbar-count,
+.toolbar-collapse-arrow {
+  margin-left: auto;
+  padding: 0 4px;
+}
+
+.devider {
+  margin: 9px 16px;
+  height: 1px;
+  background-color: #767678;
+}
+
+.add-list-and-group {
+  align-items: center;
+  display: flex;
+  height: 3rem;
+}
+
+.add-list {
+  flex-grow: 2;
+  padding-left: 12px;
+  height: 100%;
+  display: flex;
+}
+
+.add-list:hover {
+  background: #BFBFBF;
+}
+
+.add-list input[type=text] {
+  display: inline-block;
+  width: 100%;
+  padding: 6px 6px 8px 6px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  outline: none;
+  color: #767678;
+}
+
+.add-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.add-group:hover {
+  background: #BFBFBF;
+}
+
+.add-group button {
+  padding-right: 12px;
 }

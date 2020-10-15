@@ -1,0 +1,117 @@
+@import 'utils';
+@import 'btn';
+.icon {
+  // line-height: 2.4rem;
+  // font-size: 1.6rem;
+  text-align: center;
+  display: inline-block;
+  color: $color-lvl6;
+  &::before {
+    width: 24px;
+    display: inline-block;
+  }
+  &-calendar::before {
+    content: $calendar-icon;
+  }
+  &-group::before {
+    content: $group-icon;
+  }
+  &-group-plus::before {
+    content: $group-plus-icon;
+  }
+  &-ham::before {
+    content: $ham-icon;
+  }
+  &-person::before {
+    content: $person-icon;
+  }
+  &-plus::before {
+    content: $plus-icon;
+  }
+  &-star::before {
+    content: $star-icon;
+  }
+  &-sun::before {
+    content: $sun-icon;
+  }
+  &-home::before {
+    content: $home-icon;
+  }
+  &-arrow::before {
+    content: $arrow-icon;
+  }
+}
+
+.toolbar-item:hover {
+  background: $color-lvl7;
+}
+
+.toolbar-inner {
+  color: $color-lvl6;
+  cursor: pointer;
+  height: $toolbar-item-height;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.toolbar-title {
+  margin: 0 8px;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toolbar-count,
+.toolbar-collapse-arrow {
+  margin-left: auto;
+  padding: 0 4px;
+}
+
+.devider {
+  margin: 9px 16px;
+  height: 1px;
+  background-color: $color-lvl6;
+}
+
+.add-list-and-group {
+  align-items: center;
+  display: flex;
+  height: $toolbar-item-height;
+}
+
+.add-list {
+  flex-grow: 2;
+  padding-left: 12px;
+  height: 100%;
+  &:hover {
+    background: $color-lvl7;
+  }
+  display: flex;
+  input[type=text] {
+    display: inline-block;
+    width: 100%;
+    padding: 6px 6px 8px 6px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    outline: none;
+    color: $color-lvl6;
+  }
+}
+
+.add-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  &:hover {
+    background: $color-lvl7;
+  }
+  button {
+    padding-right: 12px;
+  }
+}

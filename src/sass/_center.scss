@@ -1,0 +1,92 @@
+.tasks {
+  padding: 0 3rem;
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tasks-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tasks-toolbar-options {
+  position: relative;
+  button {
+    padding: 0.3rem;
+  }
+  &:hover {
+    background-color: $color-lvl7;
+  }
+}
+
+.tasks-toolbar-manu {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  background-color: $color-lvl1;
+}
+
+.task-items {
+  margin-top: 2rem;
+  position: relative;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.task-item-body {
+  margin: 0.3rem 0;
+  border-radius: 5px;
+  background-color: $color-lvl5;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  word-wrap: break-word;
+  word-break: break-word;
+  padding: 0 12px;
+  flex-wrap: wrap;
+}
+
+.checkbox {
+  padding: 0px;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-item-title {
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+  position: relative;
+  flex: 1 1 0px;
+  min-height: 52px;
+  padding: 8px 12px;
+  line-height: 2rem;
+  overflow: hidden;
+  &:hover {
+    background-color: unset !important;
+  }
+}
+
+.add-task-body {
+  margin: 3rem 0;
+}
+
+.add-task {
+  &:hover {
+    background: unset;
+  }
+  .btn:hover {
+    background: unset;
+  }
+}

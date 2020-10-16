@@ -3,8 +3,7 @@
   background: none;
   outline: none;
   cursor: pointer;
-}
-
-.btn:hover {
-  background: $color-lvl7;
+  &:hover {
+    background: $color-lvl7;
+  }
 }

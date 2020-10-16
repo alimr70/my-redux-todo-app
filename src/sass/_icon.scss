@@ -1,0 +1,48 @@
+.icon {
+  text-align: center;
+  display: inline-block;
+  color: $color-lvl6;
+  &::before {
+    width: 24px;
+    display: inline-block;
+  }
+  &-calendar::before {
+    content: $calendar-icon;
+  }
+  &-group::before {
+    content: $group-icon;
+  }
+  &-group-plus::before {
+    content: $group-plus-icon;
+  }
+  &-ham::before {
+    content: $ham-icon;
+  }
+  &-person::before {
+    content: $person-icon;
+  }
+  &-plus::before {
+    content: $plus-icon;
+  }
+  &-star::before {
+    content: $star-icon;
+  }
+  &-sun::before {
+    content: $sun-icon;
+  }
+  &-home::before {
+    content: $home-icon;
+  }
+  &-arrow::before {
+    content: $arrow-icon;
+  }
+  &-checkbox-empty {
+    content: $checkbox-empty-icon;
+  }
+  &-checkbox-empty:hover {
+    content: $checkbox-hover-icon;
+  }
+  &-checkbox-checked::before {
+    content: $checkbox-checked-icon;
+  }
+}

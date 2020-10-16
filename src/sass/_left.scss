@@ -1,47 +1,3 @@
-@import 'utils';
-@import 'btn';
-.icon {
-  // line-height: 2.4rem;
-  // font-size: 1.6rem;
-  text-align: center;
-  display: inline-block;
-  color: $color-lvl6;
-  &::before {
-    width: 24px;
-    display: inline-block;
-  }
-  &-calendar::before {
-    content: $calendar-icon;
-  }
-  &-group::before {
-    content: $group-icon;
-  }
-  &-group-plus::before {
-    content: $group-plus-icon;
-  }
-  &-ham::before {
-    content: $ham-icon;
-  }
-  &-person::before {
-    content: $person-icon;
-  }
-  &-plus::before {
-    content: $plus-icon;
-  }
-  &-star::before {
-    content: $star-icon;
-  }
-  &-sun::before {
-    content: $sun-icon;
-  }
-  &-home::before {
-    content: $home-icon;
-  }
-  &-arrow::before {
-    content: $arrow-icon;
-  }
-}
-
 .toolbar-item:hover {
   background: $color-lvl7;
 }
@@ -118,4 +74,5 @@
 
 .group-lists {
   margin-left: 19px;
+  display: none;
 }

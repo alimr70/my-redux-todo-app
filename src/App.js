@@ -4,6 +4,11 @@ function App() {
   return (
     <div className="App">
       {/* Before Splitting into small components */}
+
+      {/* -------------------------------------------------------------------------- */
+      /*                                    Left                                    */
+      /* -------------------------------------------------------------------------- */}
+
       <div className="container container-left">
         <div className="left toolbar">
           <ul>
@@ -146,7 +151,220 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="container container-center"></div>
+
+      {/* -------------------------------------------------------------------------- */
+      /*                                   Center                                   */
+      /* -------------------------------------------------------------------------- */}
+
+      <div className="container container-center">
+        <div className="center tasks">
+          <div className="tasks-toolbar">
+            <div className="tasks-toolbar-title">
+              <div className="tasks-toolbar-title-item">
+                <h1 className="list-title">Tasks</h1>
+              </div>
+            </div>
+            <div className="tasks-toolbar-options">
+              <div className="tasks-toolbar-title-item">
+                <button className="btn">
+                  <i className="icon icon-arrow"></i>
+                </button>
+              </div>
+              {/* Tasks Menu */}
+              <div className="tasks-toolbar-manu">
+                <ul>
+                  <div>
+                    <li className="toolbar-item">
+                      <div className="toolbar-inner">
+                        <div className="toolbar-icon">
+                          <i className="icon icon-ham"></i>
+                        </div>
+                        <div className="toolbar-title">
+                          <span>Rename List</span>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  <div>
+                    <li className="toolbar-item">
+                      <div className="toolbar-inner">
+                        <div className="toolbar-icon">
+                          <i className="icon icon-ham"></i>
+                        </div>
+                        <div className="toolbar-title">
+                          <span>Move list to</span>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  <div>
+                    <li className="toolbar-item">
+                      <div className="toolbar-inner">
+                        <div className="toolbar-icon">
+                          <i className="icon icon-ham"></i>
+                        </div>
+                        <div className="toolbar-title">
+                          <span>Remove from group</span>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  <div>
+                    <li className="toolbar-item">
+                      <div className="toolbar-inner">
+                        <div className="toolbar-icon">
+                          <i className="icon icon-ham"></i>
+                        </div>
+                        <div className="toolbar-title">
+                          <span>Delete list</span>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+              {/* End Tasks Menu */}
+            </div>
+          </div>
+          {/* Task Items */}
+          <div className="task-items">
+            {/* One Task Item */}
+            <div className="task-item-body">
+              <div className="task-item-checkbox">
+                <span className="checkbox">
+                  <i className="icon icon-checkbox-empty"></i>
+                </span>
+              </div>
+              <button className="btn task-item-title">
+                <span>Recreate the todo app with redux and sass</span>
+              </button>
+              <div className="tasks-toolbar-options">
+                <div className="tasks-toolbar-title-item">
+                  <button className="btn">
+                    <i className="icon icon-arrow"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* End One Task Item */}
+            {/* One Task Item */}
+            <div className="task-item-body">
+              <div className="task-item-checkbox">
+                <span className="checkbox">
+                  <i className="icon icon-checkbox-empty"></i>
+                </span>
+              </div>
+              <button className="btn task-item-title">
+                <span>Recreate the todo app with redux and sass</span>
+              </button>
+              <div className="tasks-toolbar-options">
+                <div className="tasks-toolbar-title-item">
+                  <button className="btn">
+                    <i className="icon icon-arrow"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* End One Task Item */}
+            {/* One Task Item */}
+            <div className="task-item-body">
+              <div className="task-item-checkbox">
+                <span className="checkbox">
+                  <i className="icon icon-checkbox-empty"></i>
+                </span>
+              </div>
+              <button className="btn task-item-title">
+                <span>Recreate the todo app with redux and sass</span>
+              </button>
+              <div className="tasks-toolbar-options">
+                <div className="tasks-toolbar-title-item">
+                  <button className="btn">
+                    <i className="icon icon-arrow"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* End One Task Item */}
+            {/* One Task Item */}
+            <div className="task-item-body">
+              <div className="task-item-checkbox">
+                <span className="checkbox">
+                  <i className="icon icon-checkbox-empty"></i>
+                </span>
+              </div>
+              <button className="btn task-item-title">
+                <span>Recreate the todo app with redux and sass</span>
+              </button>
+              <div className="tasks-toolbar-options">
+                <div className="tasks-toolbar-title-item">
+                  <button className="btn">
+                    <i className="icon icon-arrow"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* End One Task Item */}
+            {/* One Task Item */}
+            <div className="task-item-body">
+              <div className="task-item-checkbox">
+                <span className="checkbox">
+                  <i className="icon icon-checkbox-empty"></i>
+                </span>
+              </div>
+              <button className="btn task-item-title">
+                <span>Recreate the todo app with redux and sass</span>
+              </button>
+              <div className="tasks-toolbar-options">
+                <div className="tasks-toolbar-title-item">
+                  <button className="btn">
+                    <i className="icon icon-arrow"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* End One Task Item */}
+            {/* One Task Item */}
+            <div className="task-item-body">
+              <div className="task-item-checkbox">
+                <span className="checkbox">
+                  <i className="icon icon-checkbox-empty"></i>
+                </span>
+              </div>
+              <button className="btn task-item-title">
+                <span>Recreate the todo app with redux and sass</span>
+              </button>
+              <div className="tasks-toolbar-options">
+                <div className="tasks-toolbar-title-item">
+                  <button className="btn">
+                    <i className="icon icon-arrow"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* End One Task Item */}
+          </div>
+          {/* Add Task */}
+          <div className="task-item-body add-task-body">
+            <div className="add-list add-task">
+              <button className="btn btn-no-hover">
+                <i className="icon icon-plus"></i>
+              </button>
+              <input
+                className="btn-no-hover"
+                type="text"
+                name="addTask"
+                id="addTask"
+                maxLength="255"
+                placeholder="New Task"
+              />
+            </div>
+          </div>
+          {/* End Task Items */}
+        </div>
+      </div>
+      {/* -------------------------------------------------------------------------- */
+      /*                                    Right                                   */
+      /* -------------------------------------------------------------------------- */}
       <div className="container container-right"></div>
       {/* End before Splitting into small components */}
     </div>

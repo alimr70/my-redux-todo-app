@@ -261,6 +261,50 @@ body {
   background: unset;
 }
 
+.task-detail-title,
+.add-step-body {
+  margin: 0;
+  border-radius: 0;
+}
+
+.detailbar-item {
+  margin: 0.5rem;
+  background: #242426;
+}
+
+.detailbar-item:hover {
+  background-color: #242426;
+}
+
+.detail-footer {
+  margin: auto 0 0 0;
+  background: #242426;
+}
+
+.detail-footer:hover {
+  background-color: #242426;
+}
+
+.detail-footer .toolbar-title {
+  margin: auto;
+}
+
+.detail-footer .icon {
+  transform: rotate(-90deg);
+}
+
+.detail-delete .btn:hover {
+  background-color: #242426;
+}
+
+.detail-delete:hover {
+  background-color: #242426;
+}
+
+.detail-delete .icon {
+  transform: rotate(45deg);
+}
+
 .icon {
   text-align: center;
   display: inline-block;

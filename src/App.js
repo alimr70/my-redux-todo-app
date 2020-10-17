@@ -365,7 +365,75 @@ function App() {
       {/* -------------------------------------------------------------------------- */
       /*                                    Right                                   */
       /* -------------------------------------------------------------------------- */}
-      <div className="container container-right"></div>
+      <div className="container container-right">
+        {/* One Task Detail */}
+        <div className="task-item-body task-detail-title">
+          <div className="task-item-checkbox">
+            <span className="checkbox">
+              <i className="icon icon-checkbox-empty"></i>
+            </span>
+          </div>
+          <button className="btn task-item-title">
+            <span>Recreate the todo app with redux and sass</span>
+          </button>
+          <div className="tasks-toolbar-options">
+            <div className="tasks-toolbar-title-item">
+              <button className="btn">
+                <i className="icon icon-arrow"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* End One Task Detail */}
+        {/* Add Step */}
+        <div className="task-item-body add-task-body add-step-body">
+          <div className="add-list add-task">
+            <button className="btn btn-no-hover">
+              <i className="icon icon-plus"></i>
+            </button>
+            <input
+              className="btn-no-hover"
+              type="text"
+              name="addTask"
+              id="addTask"
+              maxLength="255"
+              placeholder="New Step"
+            />
+          </div>
+        </div>
+
+        {/* End Add Step */}
+        {/* Add to my day */}
+        <div className="toolbar-item detailbar-item">
+          <div className="toolbar-inner">
+            <div className="toolbar-icon">
+              <i className="icon icon-sun"></i>
+            </div>
+            <div className="toolbar-title">
+              <span>Add To My Day</span>
+            </div>
+          </div>
+        </div>
+        {/* End Add to my day */}
+
+        {/* Detail Footer */}
+        <div className="toolbar-item detail-footer">
+          <div className="toolbar-inner">
+            <div className="toolbar-icon">
+              <i className="icon icon-arrow"></i>
+            </div>
+            <div className="toolbar-title">
+              <span>Created on Tue, Oct 13</span>
+            </div>
+            <div className="add-group detail-delete">
+              <button className="btn">
+                <i className="icon icon-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* End Detail Footer */}
+      </div>
       {/* End before Splitting into small components */}
     </div>
   );

@@ -33,7 +33,7 @@
       "createdAt": 1602994853734
     }
   ],
-  "lists": [{
+  "Lists": [{
       "id": 1,
       "title": "List Num #1",
       "group": 1
@@ -44,7 +44,7 @@
       "group": null
     }
   ],
-  "groups": [{
+  "Groups": [{
       "id": 1,
       "title": "group num #1"
     },

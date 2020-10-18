@@ -1,0 +1,56 @@
+{
+  "Tasks": [{
+      "id": 1,
+      "title": "Recreate the Todo app with redux and sass",
+      "steps": [{
+          "title": "step step",
+          "isChecked": false
+        },
+        {
+          "title": "step step",
+          "isChecked": false
+        }
+      ],
+      "isChecked": false,
+      "addedToMyDay": null,
+      "important": true,
+      "dueDate": null,
+      "parentList": 1,
+      "createdAt": 1602994834230
+    },
+    {
+      "id": 2,
+      "title": "Recreate the Todo app with redux and sass",
+      "steps": [{
+        "title": "step step",
+        "isChecked": false
+      }],
+      "isChecked": false,
+      "addedToMyDay": 1602994853734,
+      "important": false,
+      "dueDate": null,
+      "parentList": "id",
+      "createdAt": 1602994853734
+    }
+  ],
+  "lists": [{
+      "id": 1,
+      "title": "List Num #1",
+      "group": 1
+    },
+    {
+      "id": 2,
+      "title": "List Num #2",
+      "group": null
+    }
+  ],
+  "groups": [{
+      "id": 1,
+      "title": "group num #1"
+    },
+    {
+      "id": 2,
+      "title": "group num #2"
+    }
+  ]
+}

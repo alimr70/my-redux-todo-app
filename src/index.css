@@ -6,14 +6,14 @@
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   list-style-type: none;
-  color: #767678;
+  color: #a1a1a1;
 }
 
 /* The emerging W3C standard
    that is currently Firefox-only */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #767678 #171718;
+  scrollbar-color: #a1a1a1 #171718;
 }
 
 /* Works on Chrome/Edge/Safari */
@@ -26,7 +26,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #767678;
+  background-color: #a1a1a1;
   border-radius: 20px;
   border: 3px solid #171718;
 }
@@ -84,11 +84,11 @@ body {
 }
 
 .toolbar-item:hover {
-  background: #BFBFBF;
+  background: #e1e1e1;
 }
 
 .toolbar-inner {
-  color: #767678;
+  color: #a1a1a1;
   cursor: pointer;
   height: 3rem;
   user-select: none;
@@ -114,7 +114,7 @@ body {
 .devider {
   margin: 9px 16px;
   height: 1px;
-  background-color: #767678;
+  background-color: #a1a1a1;
 }
 
 .add-list-and-group {
@@ -131,7 +131,7 @@ body {
 }
 
 .add-list:hover {
-  background: #BFBFBF;
+  background: #e1e1e1;
 }
 
 .add-list input[type=text] {
@@ -143,7 +143,7 @@ body {
   box-shadow: none;
   border-radius: 0;
   outline: none;
-  color: #767678;
+  color: #a1a1a1;
 }
 
 .add-group {
@@ -154,7 +154,7 @@ body {
 }
 
 .add-group:hover {
-  background: #BFBFBF;
+  background: #e1e1e1;
 }
 
 .add-group button {
@@ -189,7 +189,7 @@ body {
 }
 
 .tasks-toolbar-options:hover {
-  background-color: #BFBFBF;
+  background-color: #e1e1e1;
 }
 
 .tasks-toolbar-manu {
@@ -308,7 +308,7 @@ body {
 .icon {
   text-align: center;
   display: inline-block;
-  color: #767678;
+  color: #a1a1a1;
 }
 
 .icon::before {
@@ -376,5 +376,5 @@ body {
 }
 
 .btn:hover {
-  background: #BFBFBF;
+  background: #e1e1e1;
 }

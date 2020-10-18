@@ -45,19 +45,6 @@ const PremadeLists = () => {
         <li className="toolbar-item">
           <div className="toolbar-inner">
             <div className="toolbar-icon">
-              <i className="icon icon-person"></i>
-            </div>
-            <div className="toolbar-title">
-              <span>Assigned to you</span>
-            </div>
-            <div className="toolbar-count">1</div>
-          </div>
-        </li>
-      </div>
-      <div>
-        <li className="toolbar-item">
-          <div className="toolbar-inner">
-            <div className="toolbar-icon">
               <i className="icon icon-home"></i>
             </div>
             <div className="toolbar-title">

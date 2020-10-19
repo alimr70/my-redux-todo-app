@@ -12,9 +12,9 @@
         }
       ],
       "isChecked": false,
-      "addedToMyDay": null,
+      "addedToMyDay": 1603081004426,
       "important": true,
-      "dueDate": null,
+      "dueDate": 1602058400000,
       "parentList": 1,
       "createdAt": 1602994834230
     },
@@ -25,11 +25,11 @@
         "title": "step step",
         "isChecked": false
       }],
-      "isChecked": false,
-      "addedToMyDay": 1602994853734,
-      "important": false,
-      "dueDate": null,
-      "parentList": "id",
+      "isChecked": true,
+      "addedToMyDay": 1603081025853,
+      "important": true,
+      "dueDate": 1605058400000,
+      "parentList": 0,
       "createdAt": 1602994853734
     }
   ],

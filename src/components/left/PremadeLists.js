@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
-import { useDispatch as dispatch, useSelector } from "react-redux";
+import React from "react";
+import * as listsActions from "../../redux/actions/listsActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const PremadeLists = () => {
   const counter = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
 
   return (
     <>
-      <div>
+      <div
+        onClick={() => {
+          dispatch(listsActions.setCurrentList("myDay"));
+        }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
             <div className="toolbar-icon">
@@ -21,7 +26,10 @@ const PremadeLists = () => {
           </div>
         </li>
       </div>
-      <div>
+      <div
+        onClick={() => {
+          dispatch(listsActions.setCurrentList("important"));
+        }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
             <div className="toolbar-icon">
@@ -36,7 +44,10 @@ const PremadeLists = () => {
           </div>
         </li>
       </div>
-      <div>
+      <div
+        onClick={() => {
+          dispatch(listsActions.setCurrentList("planned"));
+        }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
             <div className="toolbar-icon">
@@ -51,7 +62,10 @@ const PremadeLists = () => {
           </div>
         </li>
       </div>
-      <div>
+      <div
+        onClick={() => {
+          dispatch(listsActions.setCurrentList(0));
+        }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
             <div className="toolbar-icon">

@@ -83,6 +83,10 @@ body {
   margin-top: 5rem;
 }
 
+.unhide {
+  display: block !important;
+}
+
 .toolbar-item:hover {
   background: #e1e1e1;
 }

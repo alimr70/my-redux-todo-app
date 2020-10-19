@@ -85,6 +85,10 @@ body {
   margin-top: 5rem;
 }
 
+.unhide {
+  display: block !important;
+}
+
 @import "left";
 @import "center";
 @import "right";

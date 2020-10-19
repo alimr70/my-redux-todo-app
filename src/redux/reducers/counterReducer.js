@@ -25,8 +25,6 @@ let importantCounter = 0;
 let dueDateCounter = 0;
 let tasksListCounter = 0;
 tasks.forEach((obj) => {
-  console.log(obj);
-  console.log(obj.parentList);
   if (isToday(obj.addedToMyDay) && !obj.isChecked) {
     myDayCounter++;
   } else {

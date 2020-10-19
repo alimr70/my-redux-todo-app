@@ -11,7 +11,6 @@ const AddStep = () => {
           className="btn-no-hover"
           type="text"
           name="addTask"
-          id="addTask"
           maxLength="255"
           placeholder="New Step"
         />

@@ -11,6 +11,16 @@ const groupsReducer = (state = DummyData.Groups, action) => {
         },
       ];
 
+    case "EDIT_GROUP":
+      const newState = state.filter((group) => group.id !== action.payload.id);
+      return [
+        ...newState,
+        {
+          id: action.payload.id,
+          title: action.payload.title,
+        },
+      ];
+
     default:
       return state;
   }

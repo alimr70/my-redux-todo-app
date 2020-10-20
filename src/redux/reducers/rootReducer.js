@@ -2,9 +2,8 @@ import counterReducer from "./counterReducer";
 import tasksReducer from "./tasksReducer";
 import listsReducer from "./listsReducer";
 import groupsReducer from "./groupsReducer";
-import currentListIdReducer from "./currentListIdReducer";
-import currentGroupIdReducer from "./currentGroupIdReducer";
-import addingListReducer from "./addingListReducer";
+import { currentListIdReducer, currentGroupIdReducer } from "./currentReducer";
+import { addingListReducer, addingGroupReducer } from "./addingReducer";
 
 import { combineReducers } from "redux";
 
@@ -16,6 +15,7 @@ const rootReducer = combineReducers({
   currentList: currentListIdReducer,
   currentGroup: currentGroupIdReducer,
   addingList: addingListReducer,
+  addingGroup: addingGroupReducer,
 });
 
 export default rootReducer;

@@ -9,9 +9,26 @@ export const setCurrentGroup = (groupId) => {
   };
 };
 
+export const addingGroup = (title) => {
+  return {
+    type: "ADDING_GROUP",
+    payload: { title: title },
+  };
+};
+
 export const addGroup = (id, title) => {
   return {
     type: "ADD_GROUP",
+    payload: {
+      id: id,
+      title: title,
+    },
+  };
+};
+
+export const editGroup = (id, title) => {
+  return {
+    type: "EDIT_GROUP",
     payload: {
       id: id,
       title: title,

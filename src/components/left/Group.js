@@ -1,21 +1,29 @@
 import React from "react";
 import GroupList from "./GroupList";
-import { useSelector } from "react-redux";
+import * as actions from "../../redux/actions/actions";
+import { useSelector, useDispatch } from "react-redux";
 
 const Group = ({ groupId, groupTitle }) => {
+  const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks);
   const lists = useSelector((state) => state.lists);
-  const tasksCount = (listId, isChecked) => {
+  const currentGroup = useSelector((state) => state.currentGroup.groupId);
+  const tasksCount = (listId) => {
     let count = tasks.filter(
-      (task) => task.parentList === listId && task.isChecked === true
+      (task) => task.parentList === listId && task.isChecked === false
     );
     return count;
   };
-  console.log();
   const listsCount = lists.filter((list) => list.group === groupId);
 
   return (
-    <div key={groupId}>
+    <div
+      key={groupId}
+      onClick={() => {
+        currentGroup === groupId
+          ? dispatch(actions.setCurrentGroup(0))
+          : dispatch(actions.setCurrentGroup(groupId));
+      }}>
       <li className="toolbar-item">
         <div className="toolbar-inner">
           <div className="toolbar-icon">
@@ -32,7 +40,10 @@ const Group = ({ groupId, groupTitle }) => {
             ""
           )}
         </div>
-        <ul className="group-lists unhide">
+        <ul
+          className={
+            currentGroup === groupId ? "group-lists unhide" : "group-lists"
+          }>
           {lists.map((list) => {
             return list.group === groupId ? (
               <GroupList

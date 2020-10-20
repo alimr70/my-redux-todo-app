@@ -27,23 +27,15 @@ let tasksListCounter = 0;
 tasks.forEach((obj) => {
   if (isToday(obj.addedToMyDay) && !obj.isChecked) {
     myDayCounter++;
-  } else {
-    return;
   }
   if (obj.important && !obj.isChecked) {
     importantCounter++;
-  } else {
-    return;
   }
   if (dueDate(obj.dueDate) && !obj.isChecked) {
     dueDateCounter++;
-  } else {
-    return;
   }
   if (obj.parentList === 0 && !obj.isChecked) {
     tasksListCounter++;
-  } else {
-    return;
   }
 });
 

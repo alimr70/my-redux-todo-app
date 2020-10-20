@@ -1,5 +1,5 @@
 import React from "react";
-import * as listsActions from "../../redux/actions/listsActions";
+import * as actions from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const PremadeLists = () => {
@@ -10,7 +10,7 @@ const PremadeLists = () => {
     <>
       <div
         onClick={() => {
-          dispatch(listsActions.setCurrentList("myDay"));
+          dispatch(actions.setCurrentList("myDay"));
         }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
@@ -28,7 +28,7 @@ const PremadeLists = () => {
       </div>
       <div
         onClick={() => {
-          dispatch(listsActions.setCurrentList("important"));
+          dispatch(actions.setCurrentList("important"));
         }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
@@ -46,7 +46,7 @@ const PremadeLists = () => {
       </div>
       <div
         onClick={() => {
-          dispatch(listsActions.setCurrentList("planned"));
+          dispatch(actions.setCurrentList("planned"));
         }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
@@ -64,7 +64,7 @@ const PremadeLists = () => {
       </div>
       <div
         onClick={() => {
-          dispatch(listsActions.setCurrentList(0));
+          dispatch(actions.setCurrentList(0));
         }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">

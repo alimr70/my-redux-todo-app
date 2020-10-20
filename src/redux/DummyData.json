@@ -31,6 +31,20 @@
       "dueDate": 1605058400000,
       "parentList": 0,
       "createdAt": 1602994853734
+    },
+    {
+      "id": 3,
+      "title": "blaaaaaaaa",
+      "steps": [{
+        "title": "bla step",
+        "isChecked": false
+      }],
+      "isChecked": false,
+      "addedToMyDay": 1603081025853,
+      "important": true,
+      "dueDate": 1605058400000,
+      "parentList": 2,
+      "createdAt": 1602994853734
     }
   ],
   "Lists": [{

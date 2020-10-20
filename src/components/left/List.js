@@ -2,7 +2,7 @@ import React from "react";
 import * as actions from "../../redux/actions/actions";
 import { useDispatch } from "react-redux";
 
-const GroupList = ({ listId, listTitle, activeTaskCount }) => {
+const List = ({ listId, listTitle, activeTaskCount }) => {
   const dispatch = useDispatch();
   return (
     <div
@@ -27,4 +27,4 @@ const GroupList = ({ listId, listTitle, activeTaskCount }) => {
   );
 };
 
-export default GroupList;
+export default List;

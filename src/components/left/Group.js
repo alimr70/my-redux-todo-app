@@ -24,7 +24,7 @@ const Group = ({ groupId, groupTitle }) => {
         key={groupId}
         onClick={() => {
           currentGroup === groupId
-            ? dispatch(actions.setCurrentGroup(0))
+            ? dispatch(actions.setCurrentGroup(null))
             : dispatch(actions.setCurrentGroup(groupId));
         }}>
         <li className="toolbar-item">

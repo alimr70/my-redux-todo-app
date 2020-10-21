@@ -8,7 +8,7 @@ export const currentListIdReducer = (state = { listId: "Tasks" }, action) => {
   }
 };
 
-export const currentGroupIdReducer = (state = { groupId: 0 }, action) => {
+export const currentGroupIdReducer = (state = { groupId: null }, action) => {
   switch (action.type) {
     case "SET_GROUP":
       return { ...state, groupId: action.payload.id };
@@ -18,7 +18,7 @@ export const currentGroupIdReducer = (state = { groupId: 0 }, action) => {
   }
 };
 
-export const currentTaskIdReducer = (state = { taskId: 0 }, action) => {
+export const currentTaskIdReducer = (state = { taskId: null }, action) => {
   switch (action.type) {
     case "SET_TASK":
       return { ...state, taskId: action.payload.id };

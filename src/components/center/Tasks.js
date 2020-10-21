@@ -2,7 +2,6 @@ import React from "react";
 import AddTask from "./AddTask";
 import TaskItmes from "./TaskItems";
 import TasksHeader from "./TasksHeader";
-
 import { useSelector } from "react-redux";
 
 const Tasks = () => {

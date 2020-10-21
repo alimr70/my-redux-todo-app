@@ -1,8 +1,16 @@
 import React from "react";
+import * as actions from "../../redux/actions/actions";
+import { useDispatch } from "react-redux";
 
-const TaskItem = ({ taskTitle }) => {
+const TaskItem = ({ taskId, taskTitle }) => {
+  const dispatch = useDispatch();
   return (
-    <div className="task-item-body">
+    <div
+      className="task-item-body"
+      key={taskId}
+      onClick={() => {
+        dispatch(actions.setCurrentTask(taskId));
+      }}>
       <div className="task-item-checkbox">
         <span className="checkbox">
           <i className="icon icon-checkbox-empty"></i>

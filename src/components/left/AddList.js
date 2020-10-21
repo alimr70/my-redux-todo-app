@@ -20,9 +20,9 @@ const AddList = () => {
         <input
           type="text"
           name="addList"
-          id="addList"
           maxLength="255"
           placeholder="New List"
+          value={listTitle}
           onChange={(e) => {
             dispatch(actions.addingList(e.target.value));
           }}

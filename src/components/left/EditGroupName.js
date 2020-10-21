@@ -21,6 +21,7 @@ const EditGroupName = ({ groupId }) => {
         name="editGroup"
         maxLength="255"
         placeholder="Edit Group Name"
+        value={groupTitle}
         onChange={(e) => {
           dispatch(actions.addingGroup(e.target.value));
         }}

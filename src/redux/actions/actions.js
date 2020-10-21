@@ -68,3 +68,34 @@ export const addList = (id, title, groupId) => {
 /* -------------------------------------------------------------------------- */
 /*                                Task Actions                                */
 /* -------------------------------------------------------------------------- */
+
+export const setCurrentTask = (taskId) => {
+  return {
+    type: "SET_TASK",
+    payload: { id: taskId },
+  };
+};
+
+export const addingTask = (title) => {
+  return {
+    type: "ADDING_TASK",
+    payload: { title: title },
+  };
+};
+
+export const addTask = (id, title, listId) => {
+  return {
+    type: "ADD_TASK",
+    payload: {
+      id: id,
+      title: title,
+      steps: [],
+      isChecked: false,
+      addedToMyDay: null,
+      Important: false,
+      Planned: null,
+      parentList: listId,
+      createdAt: Date.now(),
+    },
+  };
+};

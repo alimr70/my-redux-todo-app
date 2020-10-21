@@ -17,3 +17,13 @@ export const currentGroupIdReducer = (state = { groupId: 0 }, action) => {
       return state;
   }
 };
+
+export const currentTaskIdReducer = (state = { taskId: 0 }, action) => {
+  switch (action.type) {
+    case "SET_TASK":
+      return { ...state, taskId: action.payload.id };
+
+    default:
+      return state;
+  }
+};

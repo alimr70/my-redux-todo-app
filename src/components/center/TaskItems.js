@@ -12,33 +12,35 @@ const TaskItmes = () => {
       case "My Day":
         return tasks.map((task) => {
           return isToday(task.addedToMyDay) ? (
-            <TaskItem taskTitle={task.title} />
+            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
           ) : null;
         });
 
       case "Important":
         return tasks.map((task) => {
-          return task.Important ? <TaskItem taskTitle={task.title} /> : null;
+          return task.Important ? (
+            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
+          ) : null;
         });
 
       case "Planned":
         return tasks.map((task) => {
           return isFutur(task.Planned) ? (
-            <TaskItem taskTitle={task.title} />
+            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
           ) : null;
         });
 
       case "Tasks":
         return tasks.map((task) => {
           return task.parentList === "Tasks" ? (
-            <TaskItem taskTitle={task.title} />
+            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
           ) : null;
         });
 
       default:
         return tasks.map((task) => {
           return task.parentList === currentListId ? (
-            <TaskItem taskTitle={task.title} />
+            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
           ) : null;
         });
     }

@@ -1,11 +1,11 @@
 import React from "react";
 
-const TasksHeader = () => {
+const TasksHeader = ({ currentListId, currentListTitle }) => {
   return (
     <div className="tasks-toolbar">
       <div className="tasks-toolbar-title">
         <div className="tasks-toolbar-title-item">
-          <h1 className="list-title">Tasks</h1>
+          <h1 className="list-title">{currentListTitle}</h1>
         </div>
       </div>
       <div className="tasks-toolbar-options">

@@ -1,7 +1,7 @@
 {
   "Tasks": [{
       "id": 1,
-      "title": "Recreate the Todo app with redux and sass",
+      "title": "Important and my day",
       "steps": [{
           "title": "step step",
           "isChecked": false
@@ -12,37 +12,37 @@
         }
       ],
       "isChecked": false,
-      "addedToMyDay": 1603081004426,
-      "important": true,
-      "dueDate": 1602058400000,
+      "addedToMyDay": 1603251982185,
+      "Important": true,
+      "Planned": 1602058400000,
       "parentList": 1,
       "createdAt": 1602994834230
     },
     {
       "id": 2,
-      "title": "Recreate the Todo app with redux and sass",
+      "title": "Tasks",
       "steps": [{
         "title": "step step",
         "isChecked": false
       }],
-      "isChecked": true,
+      "isChecked": false,
       "addedToMyDay": 1603081025853,
-      "important": true,
-      "dueDate": 1605058400000,
-      "parentList": 0,
+      "Important": false,
+      "Planned": 1605058400000,
+      "parentList": "Tasks",
       "createdAt": 1602994853734
     },
     {
       "id": 3,
-      "title": "blaaaaaaaa",
+      "title": "belong to list num 2",
       "steps": [{
         "title": "bla step",
         "isChecked": false
       }],
       "isChecked": false,
-      "addedToMyDay": 1603081025853,
-      "important": true,
-      "dueDate": 1605058400000,
+      "addedToMyDay": 1603185799389,
+      "Important": false,
+      "Planned": null,
       "parentList": 2,
       "createdAt": 1602994853734
     }

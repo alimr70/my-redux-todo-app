@@ -1,6 +1,6 @@
 import React from "react";
 
-const TaskItem = () => {
+const TaskItem = ({ taskTitle }) => {
   return (
     <div className="task-item-body">
       <div className="task-item-checkbox">
@@ -9,7 +9,7 @@ const TaskItem = () => {
         </span>
       </div>
       <button className="btn task-item-title">
-        <span>Recreate the todo app with redux and sass</span>
+        <span>{taskTitle}</span>
       </button>
       <div className="tasks-toolbar-options">
         <div className="tasks-toolbar-title-item">

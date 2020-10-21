@@ -1,40 +1,22 @@
 import DummyData from "../DummyData";
-
-const isToday = (inputDate) => {
-  let today = new Date().setHours(0, 0, 0, 0);
-  if (today === new Date(inputDate).setHours(0, 0, 0, 0)) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const dueDate = (inputDate) => {
-  let today = new Date().setHours(0, 0, 0, 0);
-  let futur = new Date(inputDate).setHours(0, 0, 0, 0);
-  if (today < futur) {
-    return true;
-  } else {
-    return false;
-  }
-};
+import { isToday, isFutur } from "../utilities";
 
 const tasks = DummyData.Tasks;
 let myDayCounter = 0;
-let importantCounter = 0;
-let dueDateCounter = 0;
+let ImportantCounter = 0;
+let PlannedCounter = 0;
 let tasksListCounter = 0;
 tasks.forEach((obj) => {
   if (isToday(obj.addedToMyDay) && !obj.isChecked) {
     myDayCounter++;
   }
-  if (obj.important && !obj.isChecked) {
-    importantCounter++;
+  if (obj.Important && !obj.isChecked) {
+    ImportantCounter++;
   }
-  if (dueDate(obj.dueDate) && !obj.isChecked) {
-    dueDateCounter++;
+  if (isFutur(obj.Planned) && !obj.isChecked) {
+    PlannedCounter++;
   }
-  if (obj.parentList === 0 && !obj.isChecked) {
+  if (obj.parentList === "Tasks" && !obj.isChecked) {
     tasksListCounter++;
   }
 });
@@ -42,8 +24,8 @@ tasks.forEach((obj) => {
 const counterReducer = (
   state = {
     myDay: myDayCounter,
-    important: importantCounter,
-    planned: dueDateCounter,
+    important: ImportantCounter,
+    planned: PlannedCounter,
     tasksList: tasksListCounter,
   },
   action

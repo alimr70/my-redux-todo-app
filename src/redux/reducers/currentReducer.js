@@ -1,4 +1,4 @@
-export const currentListIdReducer = (state = { listId: 0 }, action) => {
+export const currentListIdReducer = (state = { listId: "Tasks" }, action) => {
   switch (action.type) {
     case "SET_LIST":
       return { ...state, listId: action.payload.id };

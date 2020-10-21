@@ -2,6 +2,7 @@ import counterReducer from "./counterReducer";
 import tasksReducer from "./tasksReducer";
 import listsReducer from "./listsReducer";
 import groupsReducer from "./groupsReducer";
+import menuReducer from "./menuReducer";
 import {
   currentListIdReducer,
   currentTaskIdReducer,
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   addingList: addingListReducer,
   addingGroup: addingGroupReducer,
   addingTask: addingTaskReducer,
+  menu: menuReducer,
 });
 
 export default rootReducer;

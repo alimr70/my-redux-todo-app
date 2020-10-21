@@ -22,12 +22,13 @@
   }
 }
 
-.tasks-toolbar-manu {
+.tasks-toolbar-menu {
   display: none;
   position: absolute;
   top: 35px;
   right: 0px;
   background-color: $color-lvl1;
+  z-index: 111;
 }
 
 .task-items {

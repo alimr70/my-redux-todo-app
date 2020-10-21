@@ -99,3 +99,14 @@ export const addTask = (id, title, listId) => {
     },
   };
 };
+
+/* -------------------------------------------------------------------------- */
+/*                                Menu Actions                                */
+/* -------------------------------------------------------------------------- */
+
+export const openMenu = (isOpen, source) => {
+  return {
+    type: "OPEN_MENU",
+    payload: { isOpen: isOpen, source: source },
+  };
+};

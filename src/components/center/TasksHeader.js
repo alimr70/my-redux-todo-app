@@ -1,6 +1,12 @@
 import React from "react";
+import Menu from "../Menu";
+import * as actions from "../../redux/actions/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const TasksHeader = ({ currentListId, currentListTitle }) => {
+  const dispatch = useDispatch();
+  const isMenuOpen = useSelector((state) => state.menu.isOpen);
+
   return (
     <div className="tasks-toolbar">
       <div className="tasks-toolbar-title">
@@ -8,66 +14,17 @@ const TasksHeader = ({ currentListId, currentListTitle }) => {
           <h1 className="list-title">{currentListTitle}</h1>
         </div>
       </div>
-      <div className="tasks-toolbar-options">
+      <div
+        className="tasks-toolbar-options"
+        onClick={() => {
+          dispatch(actions.openMenu(!isMenuOpen, "TASK_HEADER"));
+        }}>
         <div className="tasks-toolbar-title-item">
           <button className="btn">
             <i className="icon icon-arrow"></i>
           </button>
         </div>
-        {/* Tasks Menu */}
-        <div className="tasks-toolbar-manu">
-          <ul>
-            <div>
-              <li className="toolbar-item">
-                <div className="toolbar-inner">
-                  <div className="toolbar-icon">
-                    <i className="icon icon-ham"></i>
-                  </div>
-                  <div className="toolbar-title">
-                    <span>Rename List</span>
-                  </div>
-                </div>
-              </li>
-            </div>
-            <div>
-              <li className="toolbar-item">
-                <div className="toolbar-inner">
-                  <div className="toolbar-icon">
-                    <i className="icon icon-ham"></i>
-                  </div>
-                  <div className="toolbar-title">
-                    <span>Move list to</span>
-                  </div>
-                </div>
-              </li>
-            </div>
-            <div>
-              <li className="toolbar-item">
-                <div className="toolbar-inner">
-                  <div className="toolbar-icon">
-                    <i className="icon icon-ham"></i>
-                  </div>
-                  <div className="toolbar-title">
-                    <span>Remove from group</span>
-                  </div>
-                </div>
-              </li>
-            </div>
-            <div>
-              <li className="toolbar-item">
-                <div className="toolbar-inner">
-                  <div className="toolbar-icon">
-                    <i className="icon icon-ham"></i>
-                  </div>
-                  <div className="toolbar-title">
-                    <span>Delete list</span>
-                  </div>
-                </div>
-              </li>
-            </div>
-          </ul>
-        </div>
-        {/* End Tasks Menu */}
+        <Menu id={currentListId} source={"TASK_HEADER"} />
       </div>
     </div>
   );

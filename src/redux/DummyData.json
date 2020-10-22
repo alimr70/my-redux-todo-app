@@ -11,7 +11,7 @@
           "isChecked": false
         }
       ],
-      "isChecked": false,
+      "isChecked": true,
       "addedToMyDay": 1603251982185,
       "Important": true,
       "Planned": 1602058400000,
@@ -39,7 +39,7 @@
         "title": "bla step",
         "isChecked": false
       }],
-      "isChecked": false,
+      "isChecked": true,
       "addedToMyDay": 1603185799389,
       "Important": false,
       "Planned": null,

@@ -18,6 +18,17 @@ const tasksReducer = (state = DummyData.Tasks, action) => {
         },
       ];
 
+    case "CHECK_TASK":
+      const foundTask = state.find((task) => task.id === action.payload.id);
+      const newState = state.filter((task) => task.id !== action.payload.id);
+      return [
+        ...newState,
+        {
+          ...foundTask,
+          isChecked: action.payload.isChecked,
+        },
+      ];
+
     default:
       return state;
   }

@@ -11,6 +11,8 @@ const Detailbar = () => {
   const currentTask = tasks.find((task) => task.id === currentTaskId);
   const currentTaskTitle =
     currentTask === undefined ? currentTaskId : currentTask.title;
+  const currentTaskIsChecked =
+    currentTask === undefined ? false : currentTask.isChecked;
   const currentTaskDate =
     currentTask === undefined
       ? currentTaskId
@@ -20,6 +22,7 @@ const Detailbar = () => {
       <TaskDetail
         currentTaskId={currentTaskId}
         currentTaskTitle={currentTaskTitle}
+        isChecked={currentTaskIsChecked}
       />
       <AddStep />
       <AddToMyDay />

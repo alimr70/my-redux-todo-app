@@ -3,7 +3,7 @@ import * as actions from "../../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
 import Menu from "../Menu";
 
-const TaskItem = ({ taskId, taskTitle }) => {
+const TaskItem = ({ taskId, taskTitle, isChecked }) => {
   const isMenuOpen = useSelector((state) => state.menu.isOpen);
   const currentTaskId = useSelector((state) => state.currentTask.taskId);
   const dispatch = useDispatch();
@@ -16,9 +16,18 @@ const TaskItem = ({ taskId, taskTitle }) => {
           ? dispatch(actions.setCurrentTask(null))
           : dispatch(actions.setCurrentTask(taskId));
       }}>
-      <div className="task-item-checkbox">
+      <div
+        className="task-item-checkbox"
+        onClick={() => {
+          dispatch(actions.checkTask(taskId, !isChecked));
+        }}>
         <span className="checkbox">
-          <i className="icon icon-checkbox-empty"></i>
+          <i
+            className={
+              isChecked
+                ? "icon icon-checkbox-checked"
+                : "icon icon-checkbox-empty"
+            }></i>
         </span>
       </div>
       <button className="btn task-item-title">

@@ -100,6 +100,16 @@ export const addTask = (id, title, listId) => {
   };
 };
 
+export const checkTask = (id, isChecked) => {
+  return {
+    type: "CHECK_TASK",
+    payload: {
+      id: id,
+      isChecked: isChecked,
+    },
+  };
+};
+
 /* -------------------------------------------------------------------------- */
 /*                                Menu Actions                                */
 /* -------------------------------------------------------------------------- */

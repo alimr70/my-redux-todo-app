@@ -12,35 +12,60 @@ const TaskItmes = () => {
       case "My Day":
         return tasks.map((task) => {
           return isToday(task.addedToMyDay) ? (
-            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
+            <TaskItem
+              key={task.id}
+              taskId={task.id}
+              taskTitle={task.title}
+              isChecked={task.isChecked}
+            />
           ) : null;
         });
 
       case "Important":
         return tasks.map((task) => {
           return task.Important ? (
-            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
+            <TaskItem
+              key={task.id}
+              taskId={task.id}
+              taskTitle={task.title}
+              isChecked={task.isChecked}
+            />
           ) : null;
         });
 
       case "Planned":
         return tasks.map((task) => {
           return isFutur(task.Planned) ? (
-            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
+            <TaskItem
+              key={task.id}
+              taskId={task.id}
+              taskTitle={task.title}
+              isChecked={task.isChecked}
+            />
           ) : null;
         });
 
       case "Tasks":
         return tasks.map((task) => {
           return task.parentList === "Tasks" ? (
-            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
+            <TaskItem
+              key={task.id}
+              taskId={task.id}
+              taskTitle={task.title}
+              isChecked={task.isChecked}
+            />
           ) : null;
         });
 
       default:
         return tasks.map((task) => {
           return task.parentList === currentListId ? (
-            <TaskItem key={task.id} taskId={task.id} taskTitle={task.title} />
+            <TaskItem
+              key={task.id}
+              taskId={task.id}
+              taskTitle={task.title}
+              isChecked={task.isChecked}
+            />
           ) : null;
         });
     }

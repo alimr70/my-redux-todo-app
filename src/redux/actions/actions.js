@@ -110,6 +110,17 @@ export const checkTask = (id, isChecked) => {
   };
 };
 
+export const checkStep = (parentTaskId, id, isChecked) => {
+  return {
+    type: "CHECK_STEP",
+    payload: {
+      parentTaskId: parentTaskId,
+      id: id,
+      isChecked: isChecked,
+    },
+  };
+};
+
 /* -------------------------------------------------------------------------- */
 /*                                Menu Actions                                */
 /* -------------------------------------------------------------------------- */

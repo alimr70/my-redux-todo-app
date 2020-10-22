@@ -3,10 +3,12 @@
       "id": 1,
       "title": "Important and my day",
       "steps": [{
+          "id": 111,
           "title": "step step",
           "isChecked": false
         },
         {
+          "id": 222,
           "title": "step step",
           "isChecked": false
         }
@@ -22,6 +24,7 @@
       "id": 2,
       "title": "Tasks",
       "steps": [{
+        "id": 333,
         "title": "step step",
         "isChecked": false
       }],
@@ -36,6 +39,7 @@
       "id": 3,
       "title": "belong to list num 2",
       "steps": [{
+        "id": 444,
         "title": "bla step",
         "isChecked": false
       }],

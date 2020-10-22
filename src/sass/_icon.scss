@@ -42,7 +42,7 @@
   &-checkbox-empty:hover {
     content: $checkbox-hover-icon;
   }
-  &-checkbox-checked::before {
+  &-checkbox-checked {
     content: $checkbox-checked-icon;
   }
 }

@@ -1,0 +1,52 @@
+.task-detail-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.task-detail-title,
+.add-step-body {
+  margin: 0;
+  border-radius: 0;
+}
+
+.detailbar-item {
+  margin: 0.5rem;
+  background: $color-lvl5;
+  &:hover {
+    background-color: $color-lvl5;
+  }
+}
+
+.detail-footer {
+  margin: auto 0 0 0;
+  background: $color-lvl5;
+  &:hover {
+    background-color: $color-lvl5;
+  }
+  .toolbar-title {
+    margin: auto;
+  }
+  .icon {
+    transform: rotate(-90deg);
+  }
+}
+
+.detail-delete {
+  .btn:hover {
+    background-color: $color-lvl5;
+  }
+  &:hover {
+    background-color: $color-lvl5;
+  }
+  .icon {
+    transform: rotate(45deg);
+  }
+}
+
+.step {
+  width: 100%;
+  .icon {
+    width: 18px;
+  }
+}

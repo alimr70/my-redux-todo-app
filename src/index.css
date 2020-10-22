@@ -266,6 +266,12 @@ body {
   background: unset;
 }
 
+.task-detail-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .task-detail-title,
 .add-step-body {
   margin: 0;
@@ -308,6 +314,14 @@ body {
 
 .detail-delete .icon {
   transform: rotate(45deg);
+}
+
+.step {
+  width: 100%;
+}
+
+.step .icon {
+  width: 18px;
 }
 
 .icon {
@@ -369,7 +383,7 @@ body {
   content: url("/img/checkbox-hover-icon.svg");
 }
 
-.icon-checkbox-checked::before {
+.icon-checkbox-checked {
   content: url("/img/checkbox-checked-icon.svg");
 }
 

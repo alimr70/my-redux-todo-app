@@ -29,6 +29,37 @@ const tasksReducer = (state = DummyData.Tasks, action) => {
         },
       ];
 
+    case "CHECK_STEP":
+      const foundParentTask = state.find(
+        (task) => task.id === action.payload.parentTaskId
+      );
+      const foundStep = foundParentTask.steps.find(
+        (step) => step.id === action.payload.id
+      );
+      const taskSteps = foundParentTask.steps.filter(
+        (step) => step.id !== action.payload.id
+      );
+      const newTaskSteps = [
+        ...taskSteps,
+        {
+          ...foundStep,
+          isChecked: action.payload.isChecked,
+        },
+      ];
+      const newTask = {
+        ...foundParentTask,
+        steps: [...newTaskSteps],
+      };
+      const newStepState = state.filter(
+        (task) => task.id !== action.payload.parentTaskId
+      );
+      return [
+        ...newStepState,
+        {
+          ...newTask,
+        },
+      ];
+
     default:
       return state;
   }

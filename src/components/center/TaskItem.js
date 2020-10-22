@@ -8,14 +8,7 @@ const TaskItem = ({ taskId, taskTitle, isChecked }) => {
   const currentTaskId = useSelector((state) => state.currentTask.taskId);
   const dispatch = useDispatch();
   return (
-    <div
-      className="task-item-body"
-      key={taskId}
-      onClick={() => {
-        currentTaskId === taskId
-          ? dispatch(actions.setCurrentTask(null))
-          : dispatch(actions.setCurrentTask(taskId));
-      }}>
+    <div className="task-item-body" key={taskId}>
       <div
         className="task-item-checkbox"
         onClick={() => {
@@ -30,7 +23,13 @@ const TaskItem = ({ taskId, taskTitle, isChecked }) => {
             }></i>
         </span>
       </div>
-      <button className="btn task-item-title">
+      <button
+        className="btn task-item-title"
+        onClick={() => {
+          currentTaskId === taskId
+            ? dispatch(actions.setCurrentTask(null))
+            : dispatch(actions.setCurrentTask(taskId));
+        }}>
         <span>{taskTitle}</span>
       </button>
       <div

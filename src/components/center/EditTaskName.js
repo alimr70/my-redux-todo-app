@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import * as actions from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-const EditGroupName = ({ groupId, isEditing, oldName }) => {
+const EditTaskName = ({ taskId, isEditing, oldName }) => {
   const dispatch = useDispatch();
-  const groupTitle = useSelector((state) => state.addingGroup.title);
+  const taskTitle = useSelector((state) => state.addingTask.title);
 
   useEffect(() => {
-    dispatch(actions.isEditingGroup(isEditing));
+    dispatch(actions.isEditingTask(isEditing));
   });
 
   return (
@@ -15,23 +15,24 @@ const EditGroupName = ({ groupId, isEditing, oldName }) => {
       <button
         className="btn"
         onClick={() => {
-          dispatch(actions.editGroup(groupId, groupTitle));
-          dispatch(actions.addingGroup(""));
+          dispatch(actions.editTask(taskId, taskTitle));
+          dispatch(actions.addingTask(""));
+          dispatch(actions.isEditingTask(false));
         }}>
         <i className="icon icon-plus"></i>
       </button>
       <input
         type="text"
-        name="editGroup"
+        name="editTask"
         maxLength="255"
         placeholder={oldName}
-        value={groupTitle}
+        value={taskTitle}
         onChange={(e) => {
-          dispatch(actions.addingGroup(e.target.value));
+          dispatch(actions.addingTask(e.target.value));
         }}
       />
     </div>
   );
 };
 
-export default EditGroupName;
+export default EditTaskName;

@@ -9,6 +9,7 @@ const Group = ({ groupId, groupTitle }) => {
   const tasks = useSelector((state) => state.tasks);
   const lists = useSelector((state) => state.lists);
   const currentGroup = useSelector((state) => state.currentGroup.groupId);
+  const isEditingGroup = useSelector((state) => state.currentGroup.isEditing);
   const checkNewGroup = currentGroup === groupId && groupTitle === "New Group";
   const tasksCount = (listId) => {
     let count = tasks.filter(
@@ -20,15 +21,30 @@ const Group = ({ groupId, groupTitle }) => {
 
   return (
     <>
-      <div
-        key={groupId}
-        onClick={() => {
-          currentGroup === groupId
-            ? dispatch(actions.setCurrentGroup(null))
-            : dispatch(actions.setCurrentGroup(groupId));
-        }}>
+      <div>
         <li className="toolbar-item">
-          <div className="toolbar-inner">
+          {checkNewGroup ? (
+            <EditGroupName
+              groupId={groupId}
+              isEditing={true}
+              oldName={groupTitle}
+            />
+          ) : (
+            ""
+          )}
+          <div
+            className={
+              isEditingGroup && checkNewGroup
+                ? "toolbar-inner hide"
+                : "toolbar-inner"
+            }
+            key={groupId}
+            onClick={() => {
+              currentGroup === groupId
+                ? dispatch(actions.setCurrentGroup(null)) &&
+                  dispatch(actions.isEditingGroup(false))
+                : dispatch(actions.setCurrentGroup(groupId));
+            }}>
             <div className="toolbar-icon">
               <i className="icon icon-group"></i>
             </div>
@@ -45,7 +61,6 @@ const Group = ({ groupId, groupTitle }) => {
           </div>
         </li>
       </div>
-      {checkNewGroup ? <EditGroupName groupId={groupId} /> : ""}
       <ul
         className={
           currentGroup === groupId ? "group-lists unhide" : "group-lists"

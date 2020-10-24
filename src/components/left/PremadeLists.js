@@ -1,10 +1,31 @@
 import React from "react";
 import * as actions from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { isToday, isFutur } from "../../redux/utilities";
 
 const PremadeLists = () => {
-  const counter = useSelector((state) => state.counter);
   const dispatch = useDispatch();
+
+  const tasks = useSelector((store) => store.tasks);
+  let myDay = 0;
+  let important = 0;
+  let planned = 0;
+  let tasksList = 0;
+
+  tasks.forEach((obj) => {
+    if (isToday(obj.addedToMyDay) && !obj.isChecked) {
+      myDay++;
+    }
+    if (obj.Important && !obj.isChecked) {
+      important++;
+    }
+    if (isFutur(obj.Planned) && !obj.isChecked) {
+      planned++;
+    }
+    if (obj.parentList === "Tasks" && !obj.isChecked) {
+      tasksList++;
+    }
+  });
 
   return (
     <>
@@ -20,9 +41,7 @@ const PremadeLists = () => {
             <div className="toolbar-title">
               <span>My Day</span>
             </div>
-            <div className="toolbar-count">
-              {counter.myDay > 0 ? counter.myDay : ""}
-            </div>
+            <div className="toolbar-count">{myDay > 0 ? myDay : ""}</div>
           </div>
         </li>
       </div>
@@ -39,7 +58,7 @@ const PremadeLists = () => {
               <span>Important</span>
             </div>
             <div className="toolbar-count">
-              {counter.important > 0 ? counter.important : ""}
+              {important > 0 ? important : ""}
             </div>
           </div>
         </li>
@@ -56,9 +75,7 @@ const PremadeLists = () => {
             <div className="toolbar-title">
               <span>Planned</span>
             </div>
-            <div className="toolbar-count">
-              {counter.planned > 0 ? counter.planned : ""}
-            </div>
+            <div className="toolbar-count">{planned > 0 ? planned : ""}</div>
           </div>
         </li>
       </div>
@@ -75,7 +92,7 @@ const PremadeLists = () => {
               <span>Tasks</span>
             </div>
             <div className="toolbar-count">
-              {counter.tasksList > 0 ? counter.tasksList : ""}
+              {tasksList > 0 ? tasksList : ""}
             </div>
           </div>
         </li>

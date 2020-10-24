@@ -17,14 +17,18 @@ const TasksHeader = ({ currentListId, currentListTitle }) => {
       <div
         className="tasks-toolbar-options"
         onClick={() => {
-          dispatch(actions.openMenu(!isMenuOpen, "TASK_HEADER"));
+          dispatch(actions.openMenu(!isMenuOpen, "TASK_HEADER", currentListId));
         }}>
         <div className="tasks-toolbar-title-item">
           <button className="btn">
             <i className="icon icon-arrow"></i>
           </button>
         </div>
-        <Menu id={currentListId} source={"TASK_HEADER"} />
+        <Menu
+          id={currentListId}
+          source={"TASK_HEADER"}
+          sourceId={currentListId}
+        />
       </div>
     </div>
   );

@@ -1,4 +1,20 @@
 /* -------------------------------------------------------------------------- */
+/*                               Counter Actions                              */
+/* -------------------------------------------------------------------------- */
+
+export const initCounter = (myDay, important, planned, tasksList) => {
+  return {
+    type: "INIT_COUNTER",
+    payload: {
+      myDay: myDay,
+      important: important,
+      planned: planned,
+      tasksList: tasksList,
+    },
+  };
+};
+
+/* -------------------------------------------------------------------------- */
 /*                                Group Actions                               */
 /* -------------------------------------------------------------------------- */
 
@@ -36,6 +52,15 @@ export const editGroup = (id, title) => {
   };
 };
 
+export const isEditingGroup = (isEditing) => {
+  return {
+    type: "IS_EDITING_GROUP",
+    payload: {
+      isEditing: isEditing,
+    },
+  };
+};
+
 /* -------------------------------------------------------------------------- */
 /*                                List Actions                                */
 /* -------------------------------------------------------------------------- */
@@ -65,6 +90,14 @@ export const addList = (id, title, groupId) => {
   };
 };
 
+export const isEditingList = (isEditing) => {
+  return {
+    type: "IS_EDITING_LIST",
+    payload: {
+      isEditing: isEditing,
+    },
+  };
+};
 /* -------------------------------------------------------------------------- */
 /*                                Task Actions                                */
 /* -------------------------------------------------------------------------- */
@@ -121,13 +154,57 @@ export const checkStep = (parentTaskId, id, isChecked) => {
   };
 };
 
+export const editTask = (id, title) => {
+  return {
+    type: "EDIT_TASK",
+    payload: {
+      id: id,
+      title: title,
+    },
+  };
+};
+
+export const isEditingTask = (isEditing) => {
+  return {
+    type: "IS_EDITING_TASK",
+    payload: {
+      isEditing: isEditing,
+    },
+  };
+};
+
 /* -------------------------------------------------------------------------- */
 /*                                Menu Actions                                */
 /* -------------------------------------------------------------------------- */
 
-export const openMenu = (isOpen, source) => {
+export const openMenu = (isOpen, source, sourceId) => {
   return {
     type: "OPEN_MENU",
-    payload: { isOpen: isOpen, source: source },
+    payload: { isOpen: isOpen, source: source, sourceId: sourceId },
   };
+};
+
+export const menuRename = (source, sourceId) => {
+  switch (source) {
+    case "TASK_ITEM":
+      return {
+        type: "RENAMEING_TASK",
+        payload: {
+          taskId: sourceId,
+          isEditing: true,
+        },
+      };
+
+    case "TASK_DETAIL":
+      return {
+        type: "RENAMEING_TASK",
+        payload: {
+          taskId: sourceId,
+          isEditing: true,
+        },
+      };
+
+    default:
+      break;
+  }
 };

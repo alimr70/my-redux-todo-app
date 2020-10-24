@@ -18,6 +18,21 @@ const tasksReducer = (state = DummyData.Tasks, action) => {
         },
       ];
 
+    case "EDIT_TASK":
+      const foundEditingTask = state.find(
+        (task) => task.id === action.payload.id
+      );
+      const newEditingState = state.filter(
+        (task) => task.id !== action.payload.id
+      );
+      return [
+        ...newEditingState,
+        {
+          ...foundEditingTask,
+          title: action.payload.title,
+        },
+      ];
+
     case "CHECK_TASK":
       const foundTask = state.find((task) => task.id === action.payload.id);
       const newState = state.filter((task) => task.id !== action.payload.id);

@@ -37,14 +37,20 @@ const TaskDetail = ({
         <div
           className="tasks-toolbar-options"
           onClick={() => {
-            dispatch(actions.openMenu(!isMenuOpen, "TASK_DETAIL"));
+            dispatch(
+              actions.openMenu(!isMenuOpen, "TASK_DETAIL", currentTaskId)
+            );
           }}>
           <div className="tasks-toolbar-title-item">
             <button className="btn">
               <i className="icon icon-arrow"></i>
             </button>
           </div>
-          <Menu id={currentTaskId} source={"TASK_DETAIL"} />
+          <Menu
+            id={currentTaskId}
+            source={"TASK_DETAIL"}
+            sourceId={currentTaskId}
+          />
         </div>
       </div>
       <Steps parentTaskId={currentTaskId} steps={currentTaskSteps} />

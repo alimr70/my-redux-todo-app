@@ -83,6 +83,10 @@ body {
   margin-top: 5rem;
 }
 
+.hide {
+  display: none !important;
+}
+
 .unhide {
   display: block !important;
 }
@@ -130,7 +134,7 @@ body {
 .add-list {
   flex-grow: 2;
   padding-left: 12px;
-  height: 100%;
+  height: 3rem;
   display: flex;
 }
 
@@ -218,6 +222,7 @@ body {
   border-radius: 5px;
   background-color: #242426;
   min-height: 52px;
+  min-width: 300px;
   display: flex;
   align-items: center;
   position: relative;

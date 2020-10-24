@@ -1,11 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import * as actions from "../redux/actions/actions";
 
 // id={currentTaskId} type={"TASK_ITEM"}
 // id={currentTaskId} type={"TASK_DETAIL"}
 // id={currentListId} type={"TASK_HEADER"}
 
-const Menu = ({ id, source }) => {
+const Menu = ({ id, source, sourceId }) => {
+  const dispatch = useDispatch();
+
   const currentListId = useSelector((state) => state.currentList.listId);
   const currentTaskId = useSelector((state) => state.currentTask.taskId);
   const isMenuOpen = useSelector((state) => state.menu.isOpen);
@@ -20,14 +23,17 @@ const Menu = ({ id, source }) => {
         openOrNot ? "tasks-toolbar-menu unhide" : "tasks-toolbar-menu"
       }>
       <ul>
-        <div>
+        <div
+          onClick={() => {
+            dispatch(actions.menuRename(source, sourceId));
+          }}>
           <li className="toolbar-item">
             <div className="toolbar-inner">
               <div className="toolbar-icon">
                 <i className="icon icon-ham"></i>
               </div>
               <div className="toolbar-title">
-                <span>Rename List</span>
+                <span>Rename</span>
               </div>
             </div>
           </li>

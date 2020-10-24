@@ -18,7 +18,6 @@ const Detailbar = () => {
     currentTask === undefined ? false : currentTask.isChecked;
 
   const currentTaskSteps = currentTask === undefined ? [] : currentTask.steps;
-  console.log(currentTaskSteps);
 
   const currentTaskDate =
     currentTask === undefined

@@ -75,6 +75,12 @@ const tasksReducer = (state = DummyData.Tasks, action) => {
         },
       ];
 
+    case "DELETE_TASK":
+      const newDeleteState = state.filter(
+        (task) => task.id !== action.payload.id
+      );
+      return [...newDeleteState];
+
     default:
       return state;
   }

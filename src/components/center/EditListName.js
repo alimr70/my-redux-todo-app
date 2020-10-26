@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import * as actions from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-const EditTaskName = ({ taskId, isEditing, oldName }) => {
+const EditListName = ({ listId, isEditing, oldName }) => {
   const dispatch = useDispatch();
-  const taskTitle = useSelector((state) => state.currentTask.title);
+  const listTitle = useSelector((state) => state.currentList.title);
 
   useEffect(() => {
-    dispatch(actions.isEditingTask(isEditing));
+    dispatch(actions.isEditingList(isEditing));
   });
 
   return (
@@ -15,24 +15,24 @@ const EditTaskName = ({ taskId, isEditing, oldName }) => {
       <button
         className="btn"
         onClick={() => {
-          dispatch(actions.editTask(taskId, taskTitle));
-          dispatch(actions.editingTask(""));
-          dispatch(actions.isEditingTask(false));
+          dispatch(actions.editList(listId, listTitle));
+          dispatch(actions.editingList(""));
+          dispatch(actions.isEditingList(false));
         }}>
         <i className="icon icon-plus"></i>
       </button>
       <input
         type="text"
-        name="editTask"
+        name="editList"
         maxLength="255"
         placeholder={oldName}
-        value={taskTitle}
+        value={listTitle}
         onChange={(e) => {
-          dispatch(actions.editingTask(e.target.value));
+          dispatch(actions.editingList(e.target.value));
         }}
       />
     </div>
   );
 };
 
-export default EditTaskName;
+export default EditListName;

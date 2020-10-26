@@ -8,7 +8,10 @@ const TaskItem = ({ taskId, taskTitle, isChecked }) => {
   const isMenuOpen = useSelector((state) => state.menu.isOpen);
   const currentTaskId = useSelector((state) => state.currentTask.taskId);
   const isEditingTask = useSelector((state) => state.currentTask.isEditing);
-  const editingTask = currentTaskId === taskId && isEditingTask;
+  const source = useSelector((state) => state.menu.source);
+  const editingTask =
+    currentTaskId === taskId && source === "TASK_ITEM" && isEditingTask;
+  const isDetailbarOpen = useSelector((state) => state.detailbar.isOpen);
   const dispatch = useDispatch();
   return (
     <div className="task-item-body" key={taskId}>
@@ -43,6 +46,7 @@ const TaskItem = ({ taskId, taskTitle, isChecked }) => {
           currentTaskId === taskId
             ? dispatch(actions.setCurrentTask(null))
             : dispatch(actions.setCurrentTask(taskId));
+          dispatch(actions.openDetailbar(!isDetailbarOpen));
         }}>
         <span>{taskTitle}</span>
       </button>

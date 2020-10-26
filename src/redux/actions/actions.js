@@ -1,20 +1,4 @@
 /* -------------------------------------------------------------------------- */
-/*                               Counter Actions                              */
-/* -------------------------------------------------------------------------- */
-
-export const initCounter = (myDay, important, planned, tasksList) => {
-  return {
-    type: "INIT_COUNTER",
-    payload: {
-      myDay: myDay,
-      important: important,
-      planned: planned,
-      tasksList: tasksList,
-    },
-  };
-};
-
-/* -------------------------------------------------------------------------- */
 /*                                Group Actions                               */
 /* -------------------------------------------------------------------------- */
 
@@ -90,6 +74,23 @@ export const addList = (id, title, groupId) => {
   };
 };
 
+export const editList = (id, title) => {
+  return {
+    type: "EDIT_LIST",
+    payload: {
+      id: id,
+      title: title,
+    },
+  };
+};
+
+export const editingList = (title) => {
+  return {
+    type: "EDITING_LIST",
+    payload: { title: title },
+  };
+};
+
 export const isEditingList = (isEditing) => {
   return {
     type: "IS_EDITING_LIST",
@@ -98,6 +99,16 @@ export const isEditingList = (isEditing) => {
     },
   };
 };
+
+export const deleteList = (id) => {
+  return {
+    type: "DELETE_LIST",
+    payload: {
+      id: id,
+    },
+  };
+};
+
 /* -------------------------------------------------------------------------- */
 /*                                Task Actions                                */
 /* -------------------------------------------------------------------------- */
@@ -164,11 +175,27 @@ export const editTask = (id, title) => {
   };
 };
 
+export const editingTask = (title) => {
+  return {
+    type: "EDITING_TASK",
+    payload: { title: title },
+  };
+};
+
 export const isEditingTask = (isEditing) => {
   return {
     type: "IS_EDITING_TASK",
     payload: {
       isEditing: isEditing,
+    },
+  };
+};
+
+export const deleteTask = (id) => {
+  return {
+    type: "DELETE_TASK",
+    payload: {
+      id: id,
     },
   };
 };
@@ -204,7 +231,29 @@ export const menuRename = (source, sourceId) => {
         },
       };
 
+    case "TASK_HEADER":
+      return {
+        type: "RENAMEING_LIST",
+        payload: {
+          listId: sourceId,
+          isEditing: true,
+        },
+      };
+
     default:
       break;
   }
+};
+
+/* -------------------------------------------------------------------------- */
+/*                                Bars Actions                                */
+/* -------------------------------------------------------------------------- */
+
+export const openDetailbar = (isOpen) => {
+  return {
+    type: "OPEN_DETAILBAR",
+    payload: {
+      isOpen: isOpen,
+    },
+  };
 };

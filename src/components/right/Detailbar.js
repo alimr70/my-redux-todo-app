@@ -24,8 +24,15 @@ const Detailbar = () => {
       ? currentTaskId
       : new Date(currentTask.createdAt).toDateString();
 
+  const isDetailbarOpen = useSelector((state) => state.detailbar.isOpen);
+
   return (
-    <div className="container container-right">
+    <div
+      className={
+        isDetailbarOpen
+          ? "container container-right"
+          : "container container-right hide"
+      }>
       <TaskDetail
         currentTaskId={currentTaskId}
         currentTaskTitle={currentTaskTitle}

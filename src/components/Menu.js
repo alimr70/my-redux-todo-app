@@ -17,6 +17,8 @@ const Menu = ({ id, source, sourceId }) => {
   const openOrNot =
     source === menuSource && id === idTarget && isMenuOpen ? true : false;
 
+  const taskOrList = menuSource === "TASK_HEADER" ? " list" : " task";
+
   return (
     <div
       className={
@@ -33,12 +35,12 @@ const Menu = ({ id, source, sourceId }) => {
                 <i className="icon icon-ham"></i>
               </div>
               <div className="toolbar-title">
-                <span>Rename</span>
+                <span>Rename{taskOrList}</span>
               </div>
             </div>
           </li>
         </div>
-        <div>
+        {/* <div>
           <li className="toolbar-item">
             <div className="toolbar-inner">
               <div className="toolbar-icon">
@@ -49,8 +51,8 @@ const Menu = ({ id, source, sourceId }) => {
               </div>
             </div>
           </li>
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <li className="toolbar-item">
             <div className="toolbar-inner">
               <div className="toolbar-icon">
@@ -61,15 +63,23 @@ const Menu = ({ id, source, sourceId }) => {
               </div>
             </div>
           </li>
-        </div>
-        <div>
+        </div> */}
+        <div
+          onClick={() => {
+            if (menuSource === "TASK_HEADER") {
+              dispatch(actions.setCurrentList("Tasks"));
+              dispatch(actions.deleteList(sourceId));
+            } else {
+              dispatch(actions.deleteTask(sourceId));
+            }
+          }}>
           <li className="toolbar-item">
             <div className="toolbar-inner">
               <div className="toolbar-icon">
                 <i className="icon icon-ham"></i>
               </div>
               <div className="toolbar-title">
-                <span>Delete list</span>
+                <span>Delete {taskOrList}</span>
               </div>
             </div>
           </li>

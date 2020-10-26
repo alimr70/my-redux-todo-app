@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "../Menu";
 import Steps from "./Steps";
+import EditTaskName from "../center/EditTaskName";
 import * as actions from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -10,6 +11,10 @@ const TaskDetail = ({
   isChecked,
   currentTaskSteps,
 }) => {
+  const isEditingTask = useSelector((state) => state.currentTask.isEditing);
+  const source = useSelector((state) => state.menu.source);
+  const editingTask = source === "TASK_DETAIL" && isEditingTask;
+
   const dispatch = useDispatch();
   const isMenuOpen = useSelector((state) => state.menu.isOpen);
   return (
@@ -29,7 +34,19 @@ const TaskDetail = ({
               }></i>
           </span>
         </div>
-        <button className="btn task-item-title">
+        {editingTask ? (
+          <EditTaskName
+            taskId={currentTaskId}
+            isEditing={isEditingTask}
+            oldName={currentTaskTitle}
+          />
+        ) : (
+          ""
+        )}
+        <button
+          className={
+            editingTask ? "btn task-item-title hide" : "btn task-item-title"
+          }>
           <span>
             <h2>{currentTaskTitle}</h2>
           </span>

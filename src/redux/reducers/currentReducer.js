@@ -1,5 +1,5 @@
 export const currentListIdReducer = (
-  state = { listId: "Tasks", isEditing: false },
+  state = { listId: "Tasks", title: "", isEditing: false },
   action
 ) => {
   switch (action.type) {
@@ -8,6 +8,16 @@ export const currentListIdReducer = (
 
     case "IS_EDITING_LIST":
       return { ...state, isEditing: action.payload.isEditing };
+
+    case "EDITING_LIST":
+      return { ...state, title: action.payload.title };
+
+    case "RENAMEING_LIST":
+      return {
+        ...state,
+        listId: action.payload.listId,
+        isEditing: action.payload.isEditing,
+      };
 
     default:
       return state;
@@ -31,7 +41,7 @@ export const currentGroupIdReducer = (
 };
 
 export const currentTaskIdReducer = (
-  state = { taskId: null, isEditing: false },
+  state = { taskId: null, title: "", isEditing: false },
   action
 ) => {
   switch (action.type) {
@@ -40,6 +50,9 @@ export const currentTaskIdReducer = (
 
     case "IS_EDITING_TASK":
       return { ...state, isEditing: action.payload.isEditing };
+
+    case "EDITING_TASK":
+      return { ...state, title: action.payload.title };
 
     case "RENAMEING_TASK":
       return {

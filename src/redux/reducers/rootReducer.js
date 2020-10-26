@@ -12,6 +12,7 @@ import {
   addingTaskReducer,
   addingGroupReducer,
 } from "./addingReducer";
+import { detailbarReducer } from "./barsReducer";
 
 import { combineReducers } from "redux";
 
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   addingGroup: addingGroupReducer,
   addingTask: addingTaskReducer,
   menu: menuReducer,
+  detailbar: detailbarReducer,
 });
 
 export default rootReducer;

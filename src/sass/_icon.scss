@@ -2,38 +2,36 @@
   text-align: center;
   display: inline-block;
   color: $color-lvl6;
-  &::before {
-    width: 24px;
-    display: inline-block;
-  }
-  &-calendar::before {
+  width: 24px;
+  display: inline-block;
+  &-calendar {
     content: $calendar-icon;
   }
-  &-group::before {
+  &-group {
     content: $group-icon;
   }
-  &-group-plus::before {
+  &-group-plus {
     content: $group-plus-icon;
   }
-  &-ham::before {
+  &-ham {
     content: $ham-icon;
   }
-  &-person::before {
+  &-person {
     content: $person-icon;
   }
-  &-plus::before {
+  &-plus {
     content: $plus-icon;
   }
-  &-star::before {
+  &-star {
     content: $star-icon;
   }
-  &-sun::before {
+  &-sun {
     content: $sun-icon;
   }
-  &-home::before {
+  &-home {
     content: $home-icon;
   }
-  &-arrow::before {
+  &-arrow {
     content: $arrow-icon;
   }
   &-checkbox-empty {

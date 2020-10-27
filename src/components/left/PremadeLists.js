@@ -32,6 +32,9 @@ const PremadeLists = () => {
       <div
         onClick={() => {
           dispatch(actions.setCurrentList("My Day"));
+          dispatch(actions.openDetailbar(false));
+          dispatch(actions.openToolbar(false));
+          dispatch(actions.setCurrentTask(null));
         }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
@@ -48,6 +51,9 @@ const PremadeLists = () => {
       <div
         onClick={() => {
           dispatch(actions.setCurrentList("Important"));
+          dispatch(actions.openDetailbar(false));
+          dispatch(actions.openToolbar(false));
+          dispatch(actions.setCurrentTask(null));
         }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
@@ -66,6 +72,9 @@ const PremadeLists = () => {
       <div
         onClick={() => {
           dispatch(actions.setCurrentList("Planned"));
+          dispatch(actions.openDetailbar(false));
+          dispatch(actions.openToolbar(false));
+          dispatch(actions.setCurrentTask(null));
         }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">
@@ -82,6 +91,9 @@ const PremadeLists = () => {
       <div
         onClick={() => {
           dispatch(actions.setCurrentList("Tasks"));
+          dispatch(actions.openDetailbar(false));
+          dispatch(actions.openToolbar(false));
+          dispatch(actions.setCurrentTask(null));
         }}>
         <li className="toolbar-item">
           <div className="toolbar-inner">

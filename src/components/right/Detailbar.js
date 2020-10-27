@@ -25,13 +25,18 @@ const Detailbar = () => {
       : new Date(currentTask.createdAt).toDateString();
 
   const isDetailbarOpen = useSelector((state) => state.detailbar.isOpen);
+  const screenWidth = useSelector((state) => state.screen.width);
 
   return (
     <div
       className={
-        isDetailbarOpen
+        screenWidth > 1020 && isDetailbarOpen
           ? "container container-right"
-          : "container container-right hide"
+          : screenWidth > 1020 && !isDetailbarOpen
+          ? "container container-right hide"
+          : screenWidth < 1020 && isDetailbarOpen
+          ? "container container-right unshift"
+          : "container container-right"
       }>
       <TaskDetail
         currentTaskId={currentTaskId}

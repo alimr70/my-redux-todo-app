@@ -2,7 +2,8 @@ import React from "react";
 import AddTask from "./AddTask";
 import TaskItmes from "./TaskItems";
 import TasksHeader from "./TasksHeader";
-import { useSelector } from "react-redux";
+import * as actions from "../../redux/actions/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const Tasks = () => {
   const lists = useSelector((state) => state.lists);
@@ -10,9 +11,34 @@ const Tasks = () => {
   const currentList = lists.find((list) => list.id === currentListId);
   const currentListTitle =
     currentList === undefined ? currentListId : currentList.title;
+  const screenWidth = useSelector((state) => state.screen.width);
+  const isDetailbarOpen = useSelector((state) => state.detailbar.isOpen);
+  const isToolbarOpen = useSelector((state) => state.toolbar.isOpen);
+  const isBarOpen = isDetailbarOpen || isToolbarOpen;
 
+  const dispatch = useDispatch();
   return (
     <div className="container container-center">
+      <button
+        className={
+          screenWidth < 800 ? "btn overlay-btn" : "btn overlay-btn hide"
+        }
+        onClick={() => {
+          dispatch(actions.openToolbar(!isToolbarOpen));
+        }}>
+        <i className="icon icon-ham"></i>
+      </button>
+
+      <div
+        className={
+          screenWidth < 1020 && isBarOpen ? "overlay unhide" : "overlay"
+        }
+        onClick={() => {
+          dispatch(actions.openDetailbar(false));
+          dispatch(actions.openToolbar(false));
+          dispatch(actions.setCurrentTask(null));
+        }}></div>
+
       <div className="center tasks">
         <TasksHeader
           currentListId={currentListId}

@@ -49,6 +49,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
 }
 
 .container {
@@ -61,6 +62,17 @@ body {
   min-width: 250px;
   max-width: 400px;
   height: 100%;
+  z-index: 1002;
+}
+
+@media (max-width: 800px) {
+  .container-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+  }
 }
 
 .container-center {
@@ -74,7 +86,19 @@ body {
 .container-right {
   background-color: #1E1E1E;
   min-width: 360px;
+  max-width: 400px;
   height: 100%;
+  z-index: 1001;
+}
+
+@media (max-width: 1020px) {
+  .container-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+  }
 }
 
 .left,
@@ -83,12 +107,41 @@ body {
   margin-top: 5rem;
 }
 
+.overlay {
+  cursor: pointer;
+  display: none;
+  background-color: #0000009d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.overlay-btn {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+  z-index: 1005;
+}
+
+.overlay-btn .icon {
+  width: 48px;
+  margin: 0 4px 4px 4px;
+}
+
 .hide {
   display: none !important;
 }
 
 .unhide {
   display: block !important;
+}
+
+.unshift {
+  display: block;
+  transform: translateX(0);
 }
 
 .toolbar-item:hover {
@@ -333,50 +386,47 @@ body {
   text-align: center;
   display: inline-block;
   color: #a1a1a1;
-}
-
-.icon::before {
   width: 24px;
   display: inline-block;
 }
 
-.icon-calendar::before {
+.icon-calendar {
   content: url("/img/calendar-icon.svg");
 }
 
-.icon-group::before {
+.icon-group {
   content: url("/img/group-icon.svg");
 }
 
-.icon-group-plus::before {
+.icon-group-plus {
   content: url("/img/group-plus-icon.svg");
 }
 
-.icon-ham::before {
+.icon-ham {
   content: url("/img/ham-icon.svg");
 }
 
-.icon-person::before {
+.icon-person {
   content: url("/img/person-icon.svg");
 }
 
-.icon-plus::before {
+.icon-plus {
   content: url("/img/plus-icon.svg");
 }
 
-.icon-star::before {
+.icon-star {
   content: url("/img/star-icon.svg");
 }
 
-.icon-sun::before {
+.icon-sun {
   content: url("/img/sun-icon.svg");
 }
 
-.icon-home::before {
+.icon-home {
   content: url("/img/home-icon.svg");
 }
 
-.icon-arrow::before {
+.icon-arrow {
   content: url("/img/arrow-icon.svg");
 }
 

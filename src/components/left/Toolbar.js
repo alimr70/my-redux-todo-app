@@ -8,14 +8,22 @@ import List from "./List";
 const Toolbar = () => {
   const lists = useSelector((state) => state.lists);
   const tasks = useSelector((state) => state.tasks);
+  const isToolbarOpen = useSelector((state) => state.toolbar.isOpen);
+  const screenWidth = useSelector((state) => state.screen.width);
   const tasksCount = (listId) => {
     let count = tasks.filter(
       (task) => task.parentList === listId && task.isChecked === false
     );
     return count;
   };
+
   return (
-    <div className="container container-left">
+    <div
+      className={
+        screenWidth < 800 && isToolbarOpen
+          ? "container container-left unshift"
+          : "container container-left"
+      }>
       <div className="left toolbar">
         <ul>
           <PremadeLists />

@@ -257,3 +257,25 @@ export const openDetailbar = (isOpen) => {
     },
   };
 };
+
+export const openToolbar = (isOpen) => {
+  return {
+    type: "OPEN_TOOLBAR",
+    payload: {
+      isOpen: isOpen,
+    },
+  };
+};
+
+/* -------------------------------------------------------------------------- */
+/*                               Screen Actions                               */
+/* -------------------------------------------------------------------------- */
+
+export const setScreenWidth = (screenWidth) => {
+  return {
+    type: "SET_WIDTH",
+    payload: {
+      screenWidth: screenWidth,
+    },
+  };
+};

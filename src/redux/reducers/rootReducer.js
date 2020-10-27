@@ -12,7 +12,8 @@ import {
   addingTaskReducer,
   addingGroupReducer,
 } from "./addingReducer";
-import { detailbarReducer } from "./barsReducer";
+import { detailbarReducer, toolbarReducer } from "./barsReducer";
+import screenReducer from "./screenReducer";
 
 import { combineReducers } from "redux";
 
@@ -28,6 +29,8 @@ const rootReducer = combineReducers({
   addingTask: addingTaskReducer,
   menu: menuReducer,
   detailbar: detailbarReducer,
+  toolbar: toolbarReducer,
+  screen: screenReducer,
 });
 
 export default rootReducer;

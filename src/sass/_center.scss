@@ -1,4 +1,7 @@
 .tasks {
+  @media (max-width: 800px) {
+    padding: 0 1rem;
+  }
   padding: 0 3rem;
   flex: 1 1 0px;
   display: flex;
@@ -44,7 +47,7 @@
   border-radius: 5px;
   background-color: $color-lvl5;
   min-height: 52px;
-  min-width: 300px;
+  // min-width: 300px;
   display: flex;
   align-items: center;
   position: relative;

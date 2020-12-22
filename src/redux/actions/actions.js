@@ -200,6 +200,16 @@ export const deleteTask = (id) => {
   };
 };
 
+export const addedToMyDay = (id, date) => {
+  return {
+    type: "ADD_TO_MY_DAY",
+    payload: {
+      id: id,
+      addedToMyDay: date,
+    },
+  };
+};
+
 /* -------------------------------------------------------------------------- */
 /*                                Menu Actions                                */
 /* -------------------------------------------------------------------------- */

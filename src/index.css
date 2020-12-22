@@ -356,6 +356,12 @@ body {
 
 .detail-footer .toolbar-inner {
   cursor: unset;
+  padding: 0;
+}
+
+.detail-footer .add-group:hover,
+.detail-footer .btn:hover {
+  background-color: #242426;
 }
 
 @media (max-width: 1020px) {
@@ -377,12 +383,9 @@ body {
   transform: rotate(-90deg);
 }
 
-.detail-delete .btn:hover {
-  background-color: #242426;
-}
-
-.detail-delete:hover {
-  background-color: #242426;
+.detail-delete button {
+  padding: 0;
+  padding-left: 12px;
 }
 
 .detail-delete .icon {

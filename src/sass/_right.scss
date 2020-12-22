@@ -21,6 +21,11 @@
 .detail-footer {
   .toolbar-inner {
     cursor: unset;
+    padding: 0;
+  }
+  .add-group:hover,
+  .btn:hover {
+    background-color: $color-lvl5;
   }
   @media(max-width: 1020px) {
     position: fixed;
@@ -41,11 +46,9 @@
 }
 
 .detail-delete {
-  .btn:hover {
-    background-color: $color-lvl5;
-  }
-  &:hover {
-    background-color: $color-lvl5;
+  button {
+    padding: 0;
+    padding-left: 12px;
   }
   .icon {
     transform: rotate(45deg);

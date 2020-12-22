@@ -9,12 +9,14 @@ const DetailFooter = ({ currentTaskDate }) => {
     <div className="toolbar-item detail-footer">
       <div className="toolbar-inner">
         <div
-          className="toolbar-icon"
+          className="toolbar-icon add-group"
           onClick={() => {
             dispatch(actions.openDetailbar(false));
             dispatch(actions.setCurrentTask(null));
           }}>
-          <i className="icon icon-arrow"></i>
+          <button className="btn">
+            <i className="icon icon-arrow"></i>
+          </button>
         </div>
         <div className="toolbar-title">
           <span>Created on {currentTaskDate}</span>

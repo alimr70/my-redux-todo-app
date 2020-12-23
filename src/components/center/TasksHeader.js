@@ -33,22 +33,32 @@ const TasksHeader = ({ currentListId, currentListTitle }) => {
           <h1 className="list-title">{currentListTitle}</h1>
         </div>
       </div>
-      <div
-        className="tasks-toolbar-options"
-        onClick={() => {
-          dispatch(actions.openMenu(!isMenuOpen, "TASK_HEADER", currentListId));
-        }}>
-        <div className="tasks-toolbar-title-item">
-          <button className="btn">
-            <i className="icon icon-arrow"></i>
-          </button>
+      {currentListId === "My Day" ||
+      currentListId === "Important" ||
+      currentListId === "Planned" ||
+      currentListId === "Tasks" ? (
+        ""
+      ) : (
+        <div
+          className="tasks-toolbar-options"
+          onClick={() => {
+            dispatch(
+              actions.openMenu(!isMenuOpen, "TASK_HEADER", currentListId)
+            );
+          }}>
+          <div className="tasks-toolbar-title-item">
+            <button className="btn">
+              <i className="icon icon-arrow"></i>
+            </button>
+          </div>
+
+          <Menu
+            id={currentListId}
+            source={"TASK_HEADER"}
+            sourceId={currentListId}
+          />
         </div>
-        <Menu
-          id={currentListId}
-          source={"TASK_HEADER"}
-          sourceId={currentListId}
-        />
-      </div>
+      )}
     </div>
   );
 };

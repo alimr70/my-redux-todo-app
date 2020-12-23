@@ -409,55 +409,55 @@ body {
 }
 
 .icon-calendar {
-  content: url("/img/calendar-icon.svg");
+  content: url("/my-redux-todo-app/img/calendar-icon.svg");
 }
 
 .icon-group {
-  content: url("/img/group-icon.svg");
+  content: url("/my-redux-todo-app/img/group-icon.svg");
 }
 
 .icon-group-plus {
-  content: url("/img/group-plus-icon.svg");
+  content: url("/my-redux-todo-app/img/group-plus-icon.svg");
 }
 
 .icon-ham {
-  content: url("/img/ham-icon.svg");
+  content: url("/my-redux-todo-app/img/ham-icon.svg");
 }
 
 .icon-person {
-  content: url("/img/person-icon.svg");
+  content: url("/my-redux-todo-app/img/person-icon.svg");
 }
 
 .icon-plus {
-  content: url("/img/plus-icon.svg");
+  content: url("/my-redux-todo-app/img/plus-icon.svg");
 }
 
 .icon-star {
-  content: url("/img/star-icon.svg");
+  content: url("/my-redux-todo-app/img/star-icon.svg");
 }
 
 .icon-sun {
-  content: url("/img/sun-icon.svg");
+  content: url("/my-redux-todo-app/img/sun-icon.svg");
 }
 
 .icon-home {
-  content: url("/img/home-icon.svg");
+  content: url("/my-redux-todo-app/img/home-icon.svg");
 }
 
 .icon-arrow {
-  content: url("/img/arrow-icon.svg");
+  content: url("/my-redux-todo-app/img/arrow-icon.svg");
 }
 
 .icon-checkbox-empty {
-  content: url("/img/checkbox-empty-icon.svg");
+  content: url("/my-redux-todo-app/img/checkbox-empty-icon.svg");
 }
 
 .icon-checkbox-empty:hover {
-  content: url("/img/checkbox-hover-icon.svg");
+  content: url("/my-redux-todo-app/img/checkbox-hover-icon.svg");
 }
 
 .icon-checkbox-checked {
-  content: url("/img/checkbox-checked-icon.svg");
+  content: url("/my-redux-todo-app/img/checkbox-checked-icon.svg");
 }
 
 .btn {

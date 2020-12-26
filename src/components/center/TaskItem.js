@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Menu from "../Menu";
 import EditTaskName from "./EditTaskName";
 
-const TaskItem = ({ taskId, taskTitle, isChecked }) => {
+const TaskItem = ({ taskId, taskTitle, isChecked, isImportant }) => {
   const isMenuOpen = useSelector((state) => state.menu.isOpen);
   const currentTaskId = useSelector((state) => state.currentTask.taskId);
   const isEditingTask = useSelector((state) => state.currentTask.isEditing);
@@ -50,6 +50,18 @@ const TaskItem = ({ taskId, taskTitle, isChecked }) => {
         }}>
         <span>{taskTitle}</span>
       </button>
+      <div
+        className="task-item-checkbox"
+        onClick={() => {
+          dispatch(actions.importantTask(taskId, !isImportant));
+        }}>
+        <span className="checkbox">
+          <i
+            className={
+              isImportant ? "icon icon-star-checked" : "icon icon-star"
+            }></i>
+        </span>
+      </div>
       <div
         className="tasks-toolbar-options"
         onClick={() => {

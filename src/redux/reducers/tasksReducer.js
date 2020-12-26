@@ -44,6 +44,21 @@ const tasksReducer = (state = DummyData.Tasks, action) => {
         },
       ];
 
+    case "IMPORTANT_TASK":
+      const foundImportanTask = state.find(
+        (task) => task.id === action.payload.id
+      );
+      const newImportantState = state.filter(
+        (task) => task.id !== action.payload.id
+      );
+      return [
+        ...newImportantState,
+        {
+          ...foundImportanTask,
+          Important: action.payload.Important,
+        },
+      ];
+
     case "ADD_TO_MY_DAY":
       const foundMyDayTask = state.find(
         (task) => task.id === action.payload.id

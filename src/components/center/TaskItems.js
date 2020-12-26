@@ -17,6 +17,7 @@ const TaskItmes = () => {
               taskId={task.id}
               taskTitle={task.title}
               isChecked={task.isChecked}
+              isImportant={task.Important}
             />
           ) : null;
         });
@@ -29,6 +30,7 @@ const TaskItmes = () => {
               taskId={task.id}
               taskTitle={task.title}
               isChecked={task.isChecked}
+              isImportant={task.Important}
             />
           ) : null;
         });
@@ -41,6 +43,7 @@ const TaskItmes = () => {
               taskId={task.id}
               taskTitle={task.title}
               isChecked={task.isChecked}
+              isImportant={task.Important}
             />
           ) : null;
         });
@@ -53,6 +56,7 @@ const TaskItmes = () => {
               taskId={task.id}
               taskTitle={task.title}
               isChecked={task.isChecked}
+              isImportant={task.Important}
             />
           ) : null;
         });
@@ -65,6 +69,7 @@ const TaskItmes = () => {
               taskId={task.id}
               taskTitle={task.title}
               isChecked={task.isChecked}
+              isImportant={task.Important}
             />
           ) : null;
         });

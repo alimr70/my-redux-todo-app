@@ -436,6 +436,10 @@ body {
   content: url("/my-redux-todo-app/img/star-icon.svg");
 }
 
+.icon-star-checked {
+  content: url("/my-redux-todo-app/img/star-checked-icon.svg");
+}
+
 .icon-sun {
   content: url("/my-redux-todo-app/img/sun-icon.svg");
 }

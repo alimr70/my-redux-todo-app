@@ -46,7 +46,10 @@ const Detailbar = () => {
       />
       <AddStep />
       <AddToMyDay taskId={currentTaskId} />
-      <DetailFooter currentTaskDate={currentTaskDate} />
+      <DetailFooter
+        currentTaskDate={currentTaskDate}
+        sourceId={currentTaskId}
+      />
     </div>
   );
 };

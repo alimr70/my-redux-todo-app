@@ -2,7 +2,7 @@ import React from "react";
 import * as actions from "../../redux/actions/actions";
 import { useDispatch } from "react-redux";
 
-const DetailFooter = ({ currentTaskDate }) => {
+const DetailFooter = ({ currentTaskDate, sourceId }) => {
   const dispatch = useDispatch();
 
   return (
@@ -21,7 +21,13 @@ const DetailFooter = ({ currentTaskDate }) => {
         <div className="toolbar-title">
           <span>Created on {currentTaskDate}</span>
         </div>
-        <div className="add-group detail-delete">
+        <div
+          className="add-group detail-delete"
+          onClick={() => {
+            dispatch(actions.openDetailbar(false));
+            dispatch(actions.deleteTask(sourceId));
+            dispatch(actions.setCurrentTask(null));
+          }}>
           <button className="btn">
             <i className="icon icon-plus"></i>
           </button>

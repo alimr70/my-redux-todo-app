@@ -1,11 +1,12 @@
 import React from "react";
 import * as actions from "../../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
-import Menu from "../Menu";
+import MenuV2 from "../MenuV2";
 import EditTaskName from "./EditTaskName";
 
 const TaskItem = ({ taskId, taskTitle, isChecked, isImportant }) => {
   const isMenuOpen = useSelector((state) => state.menu.isOpen);
+  const menuSource = useSelector((state) => state.menu.source);
   const currentTaskId = useSelector((state) => state.currentTask.taskId);
   const isEditingTask = useSelector((state) => state.currentTask.isEditing);
   const source = useSelector((state) => state.menu.source);
@@ -65,6 +66,8 @@ const TaskItem = ({ taskId, taskTitle, isChecked, isImportant }) => {
       <div
         className="tasks-toolbar-options"
         onClick={() => {
+          dispatch(actions.setCurrentTask(taskId));
+          dispatch(actions.openMenu(false, null, null));
           dispatch(actions.openMenu(!isMenuOpen, "TASK_ITEM", taskId));
         }}>
         <div className="tasks-toolbar-title-item">
@@ -72,7 +75,15 @@ const TaskItem = ({ taskId, taskTitle, isChecked, isImportant }) => {
             <i className="icon icon-arrow"></i>
           </button>
         </div>
-        <Menu id={currentTaskId} source={"TASK_ITEM"} sourceId={taskId} />
+        {/* <Menu id={currentTaskId} source={"TASK_ITEM"} sourceId={taskId} /> */}
+
+        {taskId === currentTaskId &&
+        menuSource === "TASK_ITEM" &&
+        isMenuOpen ? (
+          <MenuV2 source={"TASK_ITEM"} sourceId={taskId} taskOrList={" task"} />
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

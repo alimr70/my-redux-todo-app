@@ -2,24 +2,23 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../redux/actions/actions";
 
-const Menu = ({ id, source, sourceId }) => {
+const MenuV2 = ({ source, sourceId, taskOrList }) => {
   const dispatch = useDispatch();
 
-  const currentListId = useSelector((state) => state.currentList.listId);
-  const currentTaskId = useSelector((state) => state.currentTask.taskId);
-  const isMenuOpen = useSelector((state) => state.menu.isOpen);
+  // const currentListId = useSelector((state) => state.currentList.listId);
+  // const currentTaskId = useSelector((state) => state.currentTask.taskId);
+  // const isMenuOpen = useSelector((state) => state.menu.isOpen);
   const menuSource = useSelector((state) => state.menu.source);
-  const idTarget = menuSource === "TASK_HEADER" ? currentListId : currentTaskId;
-  const openOrNot =
-    source === menuSource && id === idTarget && isMenuOpen ? true : false;
 
-  const taskOrList = menuSource === "TASK_HEADER" ? " list" : " task";
+  // const idTarget = menuSource === "TASK_HEADER" ? currentListId : currentTaskId;
+
+  // const openOrNot =
+  //   source === menuSource && id === idTarget && isMenuOpen ? true : false;
+
+  // const taskOrList = menuSource === "TASK_HEADER" ? " list" : " task";
 
   return (
-    <div
-      className={
-        openOrNot ? "tasks-toolbar-menu unhide" : "tasks-toolbar-menu"
-      }>
+    <div className="tasks-toolbar-menu unhide">
       <ul>
         <div
           onClick={() => {
@@ -87,4 +86,4 @@ const Menu = ({ id, source, sourceId }) => {
   );
 };
 
-export default Menu;
+export default MenuV2;

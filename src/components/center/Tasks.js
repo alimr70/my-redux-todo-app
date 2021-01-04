@@ -46,8 +46,8 @@ const Tasks = () => {
           currentListTitle={currentListTitle}
         />
         {/* Task Items */}
-        {/* <TaskItmes /> */}
-        <TaskItmesV2 />
+        <TaskItmes />
+        {/* <TaskItmesV2 /> */}
         {/* Add Task */}
         <AddTask />
         {/* End Task Items */}

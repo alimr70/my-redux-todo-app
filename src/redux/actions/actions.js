@@ -145,7 +145,6 @@ export const addTask = (id, title, listId) => {
 };
 
 export const importantTask = (id, isImportant) => {
-  console.log(`id: ${id}, isImportant ${isImportant}`);
   return {
     type: "IMPORTANT_TASK",
     payload: {

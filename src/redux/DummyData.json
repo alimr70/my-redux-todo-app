@@ -14,7 +14,7 @@
         }
       ],
       "isChecked": true,
-      "addedToMyDay": 1609651798075,
+      "addedToMyDay": 1609855025357,
       "Important": true,
       "Planned": 1602058400000,
       "parentList": 1,
@@ -22,7 +22,7 @@
     },
     {
       "id": 2,
-      "title": "Tasks",
+      "title": "Tasks and Planned",
       "steps": [{
         "id": 333,
         "title": "step step",
@@ -31,7 +31,7 @@
       "isChecked": false,
       "addedToMyDay": 1603081025853,
       "Important": false,
-      "Planned": 1609738483913,
+      "Planned": 3219814080106,
       "parentList": "Tasks",
       "createdAt": 1602994853734
     },
@@ -44,7 +44,7 @@
         "isChecked": false
       }],
       "isChecked": true,
-      "addedToMyDay": 1603520393640,
+      "addedToMyDay": 1609905396515,
       "Important": false,
       "Planned": null,
       "parentList": 2,

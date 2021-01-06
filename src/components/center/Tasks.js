@@ -2,6 +2,7 @@ import React from "react";
 import AddTask from "./AddTask";
 import TaskItmes from "./TaskItems";
 import TaskItmesV2 from "./TaskItemsV2";
+import TaskItmesV3 from "./TaskItemsV3";
 import TasksHeader from "./TasksHeader";
 import * as actions from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -46,8 +47,9 @@ const Tasks = () => {
           currentListTitle={currentListTitle}
         />
         {/* Task Items */}
-        <TaskItmes />
+        {/* <TaskItmes /> */}
         {/* <TaskItmesV2 /> */}
+        <TaskItmesV3 />
         {/* Add Task */}
         <AddTask />
         {/* End Task Items */}

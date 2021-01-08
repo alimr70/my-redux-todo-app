@@ -44,9 +44,16 @@ const TasksHeader = ({ currentListId, currentListTitle }) => {
         <div
           className="tasks-toolbar-options"
           onClick={() => {
-            dispatch(actions.openMenu(false, null, null));
             dispatch(
-              actions.openMenu(!isMenuOpen, "TASK_HEADER", currentListId)
+              actions.openMenu(
+                isMenuOpen &&
+                  globalListId === currentListId &&
+                  menuSource === "TASK_HEADER"
+                  ? false
+                  : true,
+                "TASK_HEADER",
+                currentListId
+              )
             );
           }}>
           <div className="tasks-toolbar-title-item">

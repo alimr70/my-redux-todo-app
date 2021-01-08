@@ -9,6 +9,9 @@ const GroupList = ({ listId, listTitle, activeTaskCount }) => {
       key={listId}
       onClick={() => {
         dispatch(actions.setCurrentList(listId));
+        dispatch(actions.openDetailbar(false));
+        dispatch(actions.openToolbar(false));
+        dispatch(actions.setCurrentTask(null));
       }}>
       <li className="toolbar-item">
         <div className="toolbar-inner">

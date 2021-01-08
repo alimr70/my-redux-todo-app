@@ -68,12 +68,22 @@ const TaskItemV3 = ({ taskId }) => {
             }></i>
         </span>
       </div>
+
       <div
         className="tasks-toolbar-options"
         onClick={() => {
-          dispatch(actions.openMenu(false, null, null));
           dispatch(actions.setCurrentTask(id));
-          dispatch(actions.openMenu(!isMenuOpen, "TASK_ITEM", id));
+          // dispatch(actions.openMenu(false, null, null));
+          console.log(isMenuOpen);
+          dispatch(
+            actions.openMenu(
+              isMenuOpen && currentTaskId === id && menuSource === "TASK_ITEM"
+                ? false
+                : true,
+              "TASK_ITEM",
+              id
+            )
+          );
         }}>
         <div className="tasks-toolbar-title-item">
           <button className="btn">

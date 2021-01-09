@@ -11,6 +11,12 @@ const menuReducer = (
         sourceId: action.payload.sourceId,
       };
 
+    case "TOGGLE_MENU":
+      return {
+        ...state,
+        isOpen: action.payload.isOpen,
+      };
+
     default:
       return state;
   }

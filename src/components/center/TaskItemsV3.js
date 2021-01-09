@@ -3,6 +3,7 @@ import TaskItem from "./TaskItem";
 import TaskItemV3 from "./TaskItemV3";
 import { useSelector } from "react-redux";
 import { isToday, isFutur } from "../../redux/utilities";
+import ClickeOutSide from "../ClickeOutSide";
 
 const TaskItmesV3 = () => {
   const tasks = useSelector((state) => state.tasks);
@@ -152,7 +153,13 @@ const TaskItmesV3 = () => {
     }
   };
 
-  return <div className="task-items">{<WhatToShow />}</div>;
+  return (
+    <div className="task-items">
+      <ClickeOutSide>
+        <WhatToShow />
+      </ClickeOutSide>
+    </div>
+  );
 };
 
 export default TaskItmesV3;

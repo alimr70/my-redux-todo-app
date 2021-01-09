@@ -3,6 +3,7 @@ import MenuV2 from "../MenuV2";
 import EditListName from "./EditListName";
 import * as actions from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
+import ClickeOutSide from "../ClickeOutSide";
 
 const TasksHeader = ({ currentListId, currentListTitle }) => {
   const isEditingList = useSelector((state) => state.currentList.isEditing);
@@ -41,47 +42,49 @@ const TasksHeader = ({ currentListId, currentListTitle }) => {
       currentListId === "Tasks" ? (
         ""
       ) : (
-        <div
-          className="tasks-toolbar-options"
-          onClick={() => {
-            dispatch(
-              actions.openMenu(
-                isMenuOpen &&
-                  globalListId === currentListId &&
-                  menuSource === "TASK_HEADER"
-                  ? false
-                  : true,
-                "TASK_HEADER",
-                currentListId
-              )
-            );
-          }}>
-          <div className="tasks-toolbar-title-item">
-            <button className="btn">
-              <i className="icon icon-arrow"></i>
-            </button>
-          </div>
+        <ClickeOutSide>
+          <div
+            className="tasks-toolbar-options"
+            onClick={() => {
+              dispatch(
+                actions.openMenu(
+                  isMenuOpen &&
+                    globalListId === currentListId &&
+                    menuSource === "TASK_HEADER"
+                    ? false
+                    : true,
+                  "TASK_HEADER",
+                  currentListId
+                )
+              );
+            }}>
+            <div className="tasks-toolbar-title-item">
+              <button className="btn">
+                <i className="icon icon-arrow"></i>
+              </button>
+            </div>
 
-          {/* <Menu
+            {/* <Menu
             id={currentListId}
             source={"TASK_HEADER"}
             sourceId={currentListId}
           /> */}
 
-          {/* Open menu if menu is opened and currentList is current list */}
+            {/* Open menu if menu is opened and currentList is current list */}
 
-          {globalListId === currentListId &&
-          menuSource === "TASK_HEADER" &&
-          isMenuOpen ? (
-            <MenuV2
-              source={"TASK_HEADER"}
-              sourceId={currentListId}
-              taskOrList={" list"}
-            />
-          ) : (
-            ""
-          )}
-        </div>
+            {globalListId === currentListId &&
+            menuSource === "TASK_HEADER" &&
+            isMenuOpen ? (
+              <MenuV2
+                source={"TASK_HEADER"}
+                sourceId={currentListId}
+                taskOrList={" list"}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        </ClickeOutSide>
       )}
     </div>
   );

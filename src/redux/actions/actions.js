@@ -231,6 +231,13 @@ export const openMenu = (isOpen, source, sourceId) => {
   };
 };
 
+export const toggleMenu = (isOpen) => {
+  return {
+    type: "TOGGLE_MENU",
+    payload: { isOpen: isOpen },
+  };
+};
+
 export const menuRename = (source, sourceId) => {
   switch (source) {
     case "TASK_ITEM":

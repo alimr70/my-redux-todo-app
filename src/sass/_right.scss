@@ -43,15 +43,14 @@
   .icon {
     transform: rotate(-90deg);
   }
+  button {
+    padding: 0 12px;
+  }
 }
 
 .detail-delete {
-  button {
-    padding: 0;
-    padding-left: 12px;
-  }
   .icon {
-    transform: rotate(45deg);
+    transform: rotate(0);
   }
 }
 

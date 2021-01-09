@@ -60,7 +60,7 @@ const TasksHeader = ({ currentListId, currentListTitle }) => {
             }}>
             <div className="tasks-toolbar-title-item">
               <button className="btn">
-                <i className="icon icon-arrow"></i>
+                <i className="icon icon-menu"></i>
               </button>
             </div>
 

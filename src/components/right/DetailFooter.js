@@ -29,7 +29,7 @@ const DetailFooter = ({ currentTaskDate, sourceId }) => {
             dispatch(actions.setCurrentTask(null));
           }}>
           <button className="btn">
-            <i className="icon icon-plus"></i>
+            <i className="icon icon-trash"></i>
           </button>
         </div>
       </div>

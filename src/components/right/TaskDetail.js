@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../Menu";
+// import Menu from "../Menu";
 import Steps from "./Steps";
 import EditTaskName from "../center/EditTaskName";
 import * as actions from "../../redux/actions/actions";
@@ -16,7 +16,7 @@ const TaskDetail = ({
   const editingTask = source === "TASK_DETAIL" && isEditingTask;
 
   const dispatch = useDispatch();
-  const isMenuOpen = useSelector((state) => state.menu.isOpen);
+  // const isMenuOpen = useSelector((state) => state.menu.isOpen);
   return (
     <div className="task-item-body task-detail-title">
       <div className="task-detail-header">
@@ -51,7 +51,7 @@ const TaskDetail = ({
             <h2>{currentTaskTitle}</h2>
           </span>
         </button>
-        <div
+        {/* <div
           className="tasks-toolbar-options"
           onClick={() => {
             dispatch(
@@ -68,7 +68,7 @@ const TaskDetail = ({
             source={"TASK_DETAIL"}
             sourceId={currentTaskId}
           />
-        </div>
+        </div> */}
       </div>
       <Steps parentTaskId={currentTaskId} steps={currentTaskSteps} />
     </div>

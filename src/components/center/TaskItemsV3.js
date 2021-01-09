@@ -1,5 +1,5 @@
 import React from "react";
-import TaskItem from "./TaskItem";
+// import TaskItem from "./TaskItem";
 import TaskItemV3 from "./TaskItemV3";
 import { useSelector } from "react-redux";
 import { isToday, isFutur } from "../../redux/utilities";
@@ -26,13 +26,7 @@ const TaskItmesV3 = () => {
             {taskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
-            {checkedTaskIds.length > 0 ? (
-              <>
-                <br />
-                <br />
-                <div>Completed Tasks</div>
-              </>
-            ) : null}
+            {checkedTaskIds.length > 0 ? <div>Completed Tasks</div> : null}
             {checkedTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
@@ -54,13 +48,7 @@ const TaskItmesV3 = () => {
             {impTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
-            {checkedImpTaskIds.length > 0 ? (
-              <>
-                <br />
-                <br />
-                <div>Completed Tasks</div>
-              </>
-            ) : null}
+            {checkedImpTaskIds.length > 0 ? <div>Completed Tasks</div> : null}
             {checkedImpTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
@@ -82,13 +70,7 @@ const TaskItmesV3 = () => {
             {planTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
-            {checkedPlanTaskIds.length > 0 ? (
-              <>
-                <br />
-                <br />
-                <div>Completed Tasks</div>
-              </>
-            ) : null}
+            {checkedPlanTaskIds.length > 0 ? <div>Completed Tasks</div> : null}
             {checkedPlanTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
@@ -110,13 +92,7 @@ const TaskItmesV3 = () => {
             {tasksTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
-            {checkedTasksTaskIds.length > 0 ? (
-              <>
-                <br />
-                <br />
-                <div>Completed Tasks</div>
-              </>
-            ) : null}
+            {checkedTasksTaskIds.length > 0 ? <div>Completed Tasks</div> : null}
             {checkedTasksTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
@@ -138,13 +114,7 @@ const TaskItmesV3 = () => {
             {listsTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}
-            {checkedListsTaskIds.length > 0 ? (
-              <>
-                <br />
-                <br />
-                <div>Completed Tasks</div>
-              </>
-            ) : null}
+            {checkedListsTaskIds.length > 0 ? <div>Completed Tasks</div> : null}
             {checkedListsTaskIds.map((taskId) => (
               <TaskItemV3 key={taskId} taskId={taskId} />
             ))}

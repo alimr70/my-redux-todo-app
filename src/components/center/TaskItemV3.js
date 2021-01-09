@@ -87,7 +87,7 @@ const TaskItemV3 = ({ taskId }) => {
         }}>
         <div className="tasks-toolbar-title-item">
           <button className="btn">
-            <i className="icon icon-arrow"></i>
+            <i className="icon icon-menu"></i>
           </button>
         </div>
         {/* <Menu id={currentTaskId} source={"TASK_ITEM"} sourceId={taskId} /> */}

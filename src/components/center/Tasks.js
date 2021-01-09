@@ -1,7 +1,7 @@
 import React from "react";
 import AddTask from "./AddTask";
-import TaskItmes from "./TaskItems";
-import TaskItmesV2 from "./TaskItemsV2";
+// import TaskItmes from "./TaskItems";
+// import TaskItmesV2 from "./TaskItemsV2";
 import TaskItmesV3 from "./TaskItemsV3";
 import TasksHeader from "./TasksHeader";
 import * as actions from "../../redux/actions/actions";

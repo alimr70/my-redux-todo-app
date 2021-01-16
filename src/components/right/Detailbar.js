@@ -4,12 +4,16 @@ import AddToMyDay from "./AddToMyDay";
 import DetailFooter from "./DetailFooter";
 import TaskDetail from "./TaskDetail";
 import { useSelector } from "react-redux";
+import DueDate from "./DueDate";
 
 const Detailbar = () => {
   const tasks = useSelector((state) => state.tasks);
   const currentTaskId = useSelector((state) => state.currentTask.taskId);
 
   const currentTask = tasks.find((task) => task.id === currentTaskId);
+  const addedToMyDay =
+    currentTask === undefined ? null : currentTask.addedToMyDay;
+  const Planned = currentTask === undefined ? null : currentTask.Planned;
 
   const currentTaskTitle =
     currentTask === undefined ? currentTaskId : currentTask.title;
@@ -45,7 +49,8 @@ const Detailbar = () => {
         currentTaskSteps={currentTaskSteps}
       />
       <AddStep />
-      <AddToMyDay taskId={currentTaskId} />
+      <AddToMyDay taskId={currentTaskId} addedToMyDay={addedToMyDay} />
+      <DueDate taskId={currentTaskId} Planned={Planned} />
       <DetailFooter
         currentTaskDate={currentTaskDate}
         sourceId={currentTaskId}

@@ -14,9 +14,9 @@
         }
       ],
       "isChecked": true,
-      "addedToMyDay": 1609855025357,
+      "addedToMyDay": 1610820874021,
       "Important": true,
-      "Planned": 1602058400000,
+      "Planned": null,
       "parentList": 1,
       "createdAt": 1602994834230
     },
@@ -31,7 +31,7 @@
       "isChecked": false,
       "addedToMyDay": 1603081025853,
       "Important": false,
-      "Planned": 3219814080106,
+      "Planned": null,
       "parentList": "Tasks",
       "createdAt": 1602994853734
     },
@@ -46,13 +46,13 @@
       "isChecked": false,
       "addedToMyDay": 1603081025853,
       "Important": false,
-      "Planned": 3219814080106,
+      "Planned": null,
       "parentList": "Tasks",
       "createdAt": 1602994853734
     },
     {
       "id": 12,
-      "title": "Tasks and Planned3",
+      "title": "This task from futur",
       "steps": [{
         "id": 333,
         "title": "step step",
@@ -61,7 +61,7 @@
       "isChecked": false,
       "addedToMyDay": 1603081025853,
       "Important": false,
-      "Planned": 3219814080106,
+      "Planned": 1608076800000,
       "parentList": "Tasks",
       "createdAt": 1602994853734
     },

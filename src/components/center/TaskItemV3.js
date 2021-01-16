@@ -10,7 +10,7 @@ const getTaskById = (state, taskId) => {
 
 const TaskItemV3 = ({ taskId }) => {
   const task = useSelector((state) => getTaskById(state, taskId));
-  const { id, title, isChecked, Important } = task;
+  const { id, title, isChecked, Important, Planned } = task;
 
   const dispatch = useDispatch();
 
@@ -46,15 +46,32 @@ const TaskItemV3 = ({ taskId }) => {
       )}
       <button
         className={
-          editingTask ? "btn task-item-title hide" : "btn task-item-title"
+          editingTask
+            ? "btn task-item-title hide"
+            : Planned !== null
+            ? "btn task-item-title planned"
+            : "btn task-item-title"
         }
         onClick={() => {
-          currentTaskId === id
-            ? dispatch(actions.setCurrentTask(null))
-            : dispatch(actions.setCurrentTask(id));
-          dispatch(actions.openDetailbar(!isDetailbarOpen));
+          if (isDetailbarOpen === false && currentTaskId !== id) {
+            dispatch(actions.setCurrentTask(id));
+            dispatch(actions.openDetailbar(true));
+          } else if (isDetailbarOpen === true && currentTaskId !== id) {
+            dispatch(actions.openDetailbar(false));
+            dispatch(actions.setCurrentTask(id));
+            dispatch(actions.openDetailbar(true));
+          } else if (isDetailbarOpen === true && currentTaskId === id) {
+            dispatch(actions.openDetailbar(false));
+          } else if (isDetailbarOpen === false && currentTaskId === id) {
+            dispatch(actions.openDetailbar(true));
+          }
         }}>
-        <span>{title}</span>
+        <span className={Planned !== null ? "planned-title" : ""}>{title}</span>
+        {Planned !== null ? (
+          <span className="planned-date">
+            {new Date(Planned).toLocaleDateString()}
+          </span>
+        ) : null}
       </button>
       <div
         className="task-item-checkbox"

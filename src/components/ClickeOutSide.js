@@ -28,6 +28,8 @@ function useOutsideAlerter(ref) {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
 }
 

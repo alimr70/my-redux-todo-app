@@ -83,6 +83,16 @@
   }
 }
 
+.planned {
+  display: flex;
+  flex-direction: column;
+  line-height: unset;
+  &-date {
+    font-size: 0.7rem;
+    color: lightcoral;
+  }
+}
+
 .add-task-body {
   margin: 3rem 0;
 }

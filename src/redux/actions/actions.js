@@ -220,6 +220,16 @@ export const addedToMyDay = (id, date) => {
   };
 };
 
+export const dueDate = (id, date) => {
+  return {
+    type: "DUE_DATE",
+    payload: {
+      id: id,
+      Planned: date,
+    },
+  };
+};
+
 /* -------------------------------------------------------------------------- */
 /*                                Menu Actions                                */
 /* -------------------------------------------------------------------------- */

@@ -74,6 +74,21 @@ const tasksReducer = (state = DummyData.Tasks, action) => {
         },
       ];
 
+    case "DUE_DATE":
+      const foundDueDateTask = state.find(
+        (task) => task.id === action.payload.id
+      );
+      const newDueDateState = state.filter(
+        (task) => task.id !== action.payload.id
+      );
+      return [
+        ...newDueDateState,
+        {
+          ...foundDueDateTask,
+          Planned: action.payload.Planned,
+        },
+      ];
+
     case "CHECK_STEP":
       const foundParentTask = state.find(
         (task) => task.id === action.payload.parentTaskId

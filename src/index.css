@@ -351,6 +351,8 @@ body {
 }
 
 .detailbar-item {
+  display: flex;
+  align-items: center;
   margin: 0.5rem;
   background: #242426;
 }
@@ -411,7 +413,7 @@ body {
 }
 
 .return-to-null {
-  height: 100%;
+  height: 48px;
   width: 20%;
   margin-left: auto;
   border: none;
@@ -421,7 +423,7 @@ body {
 }
 
 .return-to-null:hover {
-  background-color: #1E1E1E;
+  background-color: #1A1B1C;
 }
 
 .return-to-null i {

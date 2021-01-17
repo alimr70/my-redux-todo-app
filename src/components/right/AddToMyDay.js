@@ -7,14 +7,12 @@ const AddToMyDay = ({ taskId, addedToMyDay }) => {
   const dispatch = useDispatch();
   return (
     <div
-      className="toolbar-item detailbar-item"
+      className="detailbar-item"
       onClick={() => {
         if (isToday(addedToMyDay)) {
           return;
         } else {
           dispatch(actions.addedToMyDay(taskId, Date.now()));
-          dispatch(actions.openDetailbar(false));
-          dispatch(actions.setCurrentTask(null));
         }
       }}>
       <div className="toolbar-inner">
@@ -22,20 +20,22 @@ const AddToMyDay = ({ taskId, addedToMyDay }) => {
           <i className="icon icon-sun"></i>
         </div>
         <div className="toolbar-title">
-          <span>Add To My Day</span>
+          {isToday(addedToMyDay) ? (
+            <span style={{ color: "lightblue" }}>Added To My Day</span>
+          ) : (
+            <span>Add To My Day</span>
+          )}
         </div>
-        {isToday(addedToMyDay) ? (
-          <button
-            className="return-to-null"
-            onClick={() => {
-              dispatch(actions.addedToMyDay(taskId, null));
-              dispatch(actions.openDetailbar(false));
-              dispatch(actions.setCurrentTask(null));
-            }}>
-            <i className="icon icon-plus"></i>
-          </button>
-        ) : null}
       </div>
+      {isToday(addedToMyDay) ? (
+        <button
+          className="return-to-null"
+          onClick={() => {
+            dispatch(actions.addedToMyDay(taskId, null));
+          }}>
+          <i className="icon icon-plus"></i>
+        </button>
+      ) : null}
     </div>
   );
 };

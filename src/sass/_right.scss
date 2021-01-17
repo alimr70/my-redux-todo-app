@@ -11,6 +11,8 @@
 }
 
 .detailbar-item {
+  display: flex;
+  align-items: center;
   margin: 0.5rem;
   background: $color-lvl5;
   &:hover {
@@ -62,7 +64,7 @@
 }
 
 .return-to-null {
-  height: 100%;
+  height: 48px;
   width: 20%;
   margin-left: auto;
   border: none;
@@ -70,7 +72,7 @@
   outline: none;
   cursor: pointer;
   &:hover {
-    background-color: $color-lvl3;
+    background-color: $color-lvl2;
   }
   i {
     transform: rotate(45deg);

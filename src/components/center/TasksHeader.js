@@ -7,8 +7,8 @@ import ClickeOutSide from "../ClickeOutSide";
 
 const TasksHeader = ({ currentListId, currentListTitle }) => {
   const isEditingList = useSelector((state) => state.currentList.isEditing);
-  const source = useSelector((state) => state.menu.source);
-  const editingList = source === "TASK_HEADER" && isEditingList;
+  // const source = useSelector((state) => state.menu.source);
+  // const editingList = source === "TASK_HEADER" && isEditingList;
 
   const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const TasksHeader = ({ currentListId, currentListTitle }) => {
   return (
     <div className="tasks-toolbar">
       <div className="tasks-toolbar-title">
-        {editingList ? (
+        {isEditingList ? (
           <EditListName
             listId={currentListId}
             isEditing={isEditingList}
@@ -27,14 +27,17 @@ const TasksHeader = ({ currentListId, currentListTitle }) => {
         ) : (
           ""
         )}
-        <div
+        <button
+          onFocus={() => {
+            dispatch(actions.menuRename("TASK_HEADER", currentListId));
+          }}
           className={
-            editingList
-              ? "tasks-toolbar-title-item hide"
-              : "tasks-toolbar-title-item"
+            isEditingList
+              ? "btn task-item-title editable-title hide"
+              : "btn task-item-title editable-title"
           }>
           <h1 className="list-title">{currentListTitle}</h1>
-        </div>
+        </button>
       </div>
       {currentListId === "My Day" ||
       currentListId === "Important" ||

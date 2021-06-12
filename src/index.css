@@ -189,8 +189,8 @@ body {
   display: flex;
 }
 
-.add-list:hover {
-  background: #e1e1e1;
+.add-list:focus-within {
+  border: solid 1px #e1e1e1;
 }
 
 .add-list input[type=text] {
@@ -348,6 +348,11 @@ body {
 .add-step-body {
   margin: 0;
   border-radius: 0;
+}
+
+.editable-title {
+  user-select: text;
+  cursor: text !important;
 }
 
 .detailbar-item {

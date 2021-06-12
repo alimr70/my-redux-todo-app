@@ -11,8 +11,14 @@ const EditListName = ({ listId, isEditing, oldName }) => {
   });
 
   return (
-    <div className="add-list">
-      <button
+    <div
+      className="add-list"
+      onBlurCapture={() => {
+        dispatch(actions.editList(listId, listTitle));
+        dispatch(actions.editingList(""));
+        dispatch(actions.isEditingList(false));
+      }}>
+      {/* <button
         className="btn"
         onClick={() => {
           dispatch(actions.editList(listId, listTitle));
@@ -20,12 +26,16 @@ const EditListName = ({ listId, isEditing, oldName }) => {
           dispatch(actions.isEditingList(false));
         }}>
         <i className="icon icon-plus"></i>
-      </button>
+      </button> */}
       <input
+        autoFocus
+        onFocus={() => {
+          dispatch(actions.editingList(oldName));
+        }}
         type="text"
         name="editList"
         maxLength="255"
-        placeholder={oldName}
+        // placeholder={oldName}
         value={listTitle}
         onChange={(e) => {
           dispatch(actions.editingList(e.target.value));

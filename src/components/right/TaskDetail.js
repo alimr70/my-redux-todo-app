@@ -12,8 +12,9 @@ const TaskDetail = ({
   currentTaskSteps,
 }) => {
   const isEditingTask = useSelector((state) => state.currentTask.isEditing);
-  const source = useSelector((state) => state.menu.source);
-  const editingTask = source === "TASK_DETAIL" && isEditingTask;
+  // const source = useSelector((state) => state.menu.source);
+  // const editingTask = source === "TASK_DETAIL" && isEditingTask;
+  // const taskTitle = useSelector((state) => state.currentTask.title);
 
   const dispatch = useDispatch();
   // const isMenuOpen = useSelector((state) => state.menu.isOpen);
@@ -34,7 +35,7 @@ const TaskDetail = ({
               }></i>
           </span>
         </div>
-        {editingTask ? (
+        {isEditingTask ? (
           <EditTaskName
             taskId={currentTaskId}
             isEditing={isEditingTask}
@@ -44,8 +45,13 @@ const TaskDetail = ({
           ""
         )}
         <button
+          onFocus={() => {
+            dispatch(actions.menuRename("TASK_DETAIL", currentTaskId));
+          }}
           className={
-            editingTask ? "btn task-item-title hide" : "btn task-item-title"
+            isEditingTask
+              ? "btn task-item-title editable-title hide"
+              : "btn task-item-title editable-title"
           }>
           <span>
             <h2>{currentTaskTitle}</h2>

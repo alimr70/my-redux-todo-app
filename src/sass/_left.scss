@@ -41,8 +41,8 @@
   flex-grow: 2;
   padding-left: 12px;
   height: 3rem;
-  &:hover {
-    background: $color-lvl7;
+  &:focus-within {
+    border: solid 1px $color-lvl7;
   }
   display: flex;
   input[type=text] {

@@ -10,6 +10,11 @@
   border-radius: 0;
 }
 
+.editable-title {
+  user-select: text;
+  cursor: text !important;
+}
+
 .detailbar-item {
   display: flex;
   align-items: center;
